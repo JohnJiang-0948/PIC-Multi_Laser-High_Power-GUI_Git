@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34114.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIC_Multi_Laser_High_Power_GUI_V1._0", "PIC Multi_Laser High_Power GUI V1.0\PIC_Multi_Laser_High_Power_GUI_V1._0.csproj", "{9A7761C5-8898-48BA-89BB-E16B0E509872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User Interface Library", "User Interface Library\User Interface Library.csproj", "{0812BA40-7B5A-4CAF-890A-56A4567C98E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi_Laser_HighPower_Data", "Multi_Laser_HighPower_Data\Multi_Laser_HighPower_Data.csproj", "{AA898700-AD0A-4AD8-86A4-923A1D74C24B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Debug|x86.ActiveCfg = Debug|x86
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Debug|x86.Build.0 = Debug|x86
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Release|x86.ActiveCfg = Release|x86
+		{9A7761C5-8898-48BA-89BB-E16B0E509872}.Release|x86.Build.0 = Release|x86
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{0812BA40-7B5A-4CAF-890A-56A4567C98E7}.Release|x86.Build.0 = Release|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Debug|x86.Build.0 = Debug|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Release|x86.ActiveCfg = Release|Any CPU
+		{AA898700-AD0A-4AD8-86A4-923A1D74C24B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2ACD27B6-CA89-4D38-8C80-E08C17A976C9}
+	EndGlobalSection
+EndGlobal

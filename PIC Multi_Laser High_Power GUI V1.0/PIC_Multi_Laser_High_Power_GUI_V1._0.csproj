@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A7761C5-8898-48BA-89BB-E16B0E509872}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PIC_Multi_Laser_High_Power_GUI_V1._0</RootNamespace>
+    <AssemblyName>PIC_Multi_Laser_High_Power_GUI_V1._0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SunnyUI">
+      <HintPath>.\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common">
+      <HintPath>.\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.219.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RadForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RadForm1.Designer.cs">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USB类库\USB_BaseClass\USB_BASIC.cs" />
+    <Compile Include="USB类库\USB_BaseClass\USB_Control_Info.cs" />
+    <Compile Include="USB类库\USB_BaseClass\USB_Control_LS.cs" />
+    <Compile Include="USB类库\USB_BaseClass\USB_Control_MyCollect.cs" />
+    <Compile Include="USB类库\USB_BaseClass\USB_Control_RT.cs" />
+    <Compile Include="USB类库\USB_BaseClass\USB_Control_SF.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="RadForm1.resx">
+      <DependentUpon>RadForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--sirinie -->
+    <None Include="Image\administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\allow_users_edit_ranges.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\script_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\script_import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\script_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\date_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\date_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\group_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\group_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\group_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\change_languange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\067-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\062-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\014-screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\068-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\note_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\page_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\languange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\PIC_图标_高清.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\063-control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\054-arrow-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Multi_Laser_HighPower_Data\Multi_Laser_HighPower_Data.csproj">
+      <Project>{aa898700-ad0a-4ad8-86a4-923a1d74c24b}</Project>
+      <Name>Multi_Laser_HighPower_Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\User Interface Library\User Interface Library.csproj">
+      <Project>{0812ba40-7b5a-4caf-890a-56a4567c98e7}</Project>
+      <Name>User Interface Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Green111.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Green222.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\网络模式.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\单机模式.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\联机模式.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\page_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\report_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\report_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\report_go.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ShouldAddDPIScalingManifest="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
