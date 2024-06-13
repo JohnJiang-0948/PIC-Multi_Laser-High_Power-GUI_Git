@@ -116,8 +116,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.USB通讯新建用例 = new Telerik.WinControls.UI.RadMenuItem();
             this.USB通讯编辑用例 = new Telerik.WinControls.UI.RadMenuItem();
             this.USB通讯载入用例 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem15 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem11 = new Telerik.WinControls.UI.RadMenuItem();
+            this.RS232配置用例 = new Telerik.WinControls.UI.RadMenuItem();
+            this.RS232新建配置用例 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem12 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem13 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
@@ -881,7 +881,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radMenuItem1,
             this.radMenuItem14,
             this.radMenuItem2,
-            this.radMenuItem15,
+            this.RS232配置用例,
             this.radMenuItem3,
             this.radMenuItem4,
             this.radMenuItem5});
@@ -976,21 +976,22 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.USB通讯载入用例.Text = "载入用例";
             this.USB通讯载入用例.Click += new System.EventHandler(this.USB通讯载入用例_Click);
             // 
-            // radMenuItem15
+            // RS232配置用例
             // 
-            this.radMenuItem15.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.report1;
-            this.radMenuItem15.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem11,
+            this.RS232配置用例.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.report1;
+            this.RS232配置用例.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.RS232新建配置用例,
             this.radMenuItem12,
             this.radMenuItem13});
-            this.radMenuItem15.Name = "radMenuItem15";
-            this.radMenuItem15.Text = "RS232配置用例";
+            this.RS232配置用例.Name = "RS232配置用例";
+            this.RS232配置用例.Text = "RS232配置用例";
             // 
-            // radMenuItem11
+            // RS232新建配置用例
             // 
-            this.radMenuItem11.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.report_add1;
-            this.radMenuItem11.Name = "radMenuItem11";
-            this.radMenuItem11.Text = "新建用例";
+            this.RS232新建配置用例.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.report_add1;
+            this.RS232新建配置用例.Name = "RS232新建配置用例";
+            this.RS232新建配置用例.Text = "新建用例";
+            this.RS232新建配置用例.Click += new System.EventHandler(this.RS232新建配置用例_Click);
             // 
             // radMenuItem12
             // 
@@ -1201,8 +1202,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private Telerik.WinControls.UI.RadMenuItem radMenuItem14;
         private Telerik.WinControls.UI.RadMenuItem 外部单机模式;
         private Telerik.WinControls.UI.RadMenuItem 内部联网模式;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem15;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem11;
+        private Telerik.WinControls.UI.RadMenuItem RS232配置用例;
+        private Telerik.WinControls.UI.RadMenuItem RS232新建配置用例;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem12;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem13;
         private Telerik.WinControls.UI.RadMenu radMenu1;

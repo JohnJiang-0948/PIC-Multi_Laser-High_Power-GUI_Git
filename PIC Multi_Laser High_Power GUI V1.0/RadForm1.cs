@@ -356,6 +356,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             USB配置_Data = UIL_载入.USB配置_Data;
             USB_Configuration.Text = USB_xml_Number;
         }
+        private void RS232新建配置用例_Click(object sender, EventArgs e)
+        {
+            User_Interface_Library.RS232通讯新建用例 UIL_RS232新建 = new RS232通讯新建用例();
+            UIL_RS232新建.RS232_XML_Folder = Main_RS232_Folder;
+            UIL_RS232新建.ShowDialog();
+        }
 
         private void Apply_Configuration_Click(object sender, EventArgs e)
         {
@@ -371,6 +377,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             dataGridView.Rows[0].Cells[3].Value = USB配置_Data.dt_Seq;
             dataGridView.Rows[1].Cells[3].Value = USB配置_Data.ch_Seq;
         }
+
+
 
         #endregion
 

@@ -11,7 +11,7 @@ namespace Multi_Laser_HighPower_Data
 {
     [Serializable]
     [XmlRoot("RS232配置")]
-    class RS232配置_CommonData
+    public class RS232配置_CommonData
     {
         [Category("Common Data")]
         [XmlElement("读取激光器模式_指令")]
@@ -50,7 +50,7 @@ namespace Multi_Laser_HighPower_Data
         public string LaserStatus_Read { get; set; }
 
         [Category("Common Data")]
-        [XmlElement("读取激光器单个通道状态")]
+        [XmlElement("读取激光器通道")]
         public string LaserChannel_Read { get; set; }
     }
 }

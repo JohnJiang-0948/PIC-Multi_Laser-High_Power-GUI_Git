@@ -32,7 +32,7 @@ namespace User_Interface_Library
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.USB_XML_Name = new System.Windows.Forms.TextBox();
+            this.RS232_XML_Name = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.新建用例 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,13 +69,13 @@ namespace User_Interface_Library
             this.propertyGrid1.Size = new System.Drawing.Size(304, 353);
             this.propertyGrid1.TabIndex = 7;
             // 
-            // USB_XML_Name
+            // RS232_XML_Name
             // 
-            this.USB_XML_Name.Location = new System.Drawing.Point(134, 31);
-            this.USB_XML_Name.Multiline = true;
-            this.USB_XML_Name.Name = "USB_XML_Name";
-            this.USB_XML_Name.Size = new System.Drawing.Size(519, 26);
-            this.USB_XML_Name.TabIndex = 6;
+            this.RS232_XML_Name.Location = new System.Drawing.Point(134, 31);
+            this.RS232_XML_Name.Multiline = true;
+            this.RS232_XML_Name.Name = "RS232_XML_Name";
+            this.RS232_XML_Name.Size = new System.Drawing.Size(519, 26);
+            this.RS232_XML_Name.TabIndex = 6;
             // 
             // dataGridView1
             // 
@@ -94,6 +94,7 @@ namespace User_Interface_Library
             this.新建用例.Size = new System.Drawing.Size(136, 43);
             this.新建用例.TabIndex = 8;
             this.新建用例.UseVisualStyleBackColor = true;
+            this.新建用例.Click += new System.EventHandler(this.新建用例_Click);
             // 
             // label1
             // 
@@ -131,7 +132,7 @@ namespace User_Interface_Library
             this.Controls.Add(this.label2);
             this.Controls.Add(this.新建用例);
             this.Controls.Add(this.propertyGrid1);
-            this.Controls.Add(this.USB_XML_Name);
+            this.Controls.Add(this.RS232_XML_Name);
             this.MaximizeBox = false;
             this.Name = "RS232通讯新建用例";
             this.Text = "RS232通讯新建用例";
@@ -147,7 +148,7 @@ namespace User_Interface_Library
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button 新建用例;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
-        private System.Windows.Forms.TextBox USB_XML_Name;
+        private System.Windows.Forms.TextBox RS232_XML_Name;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
