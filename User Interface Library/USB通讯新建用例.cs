@@ -13,9 +13,9 @@ using System.Xml.Serialization;
 
 namespace User_Interface_Library
 {
-    public partial class 通讯新建用例 : Form
+    public partial class USB通讯新建用例 : Form
     {
-        public 通讯新建用例()
+        public USB通讯新建用例()
         {
             InitializeComponent();
         }

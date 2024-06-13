@@ -335,21 +335,21 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         #region //界面—用例配置
         private void USB通讯新建用例_Click(object sender, EventArgs e)
         {
-            User_Interface_Library.通讯新建用例 UIL_新建 = new 通讯新建用例();
+            User_Interface_Library.USB通讯新建用例 UIL_新建 = new USB通讯新建用例();
             UIL_新建.USB_XML_Folder = Main_USB_XML_Folder;
             UIL_新建.ShowDialog();
         }
 
         private void USB通讯编辑用例_Click(object sender, EventArgs e)
         {
-            User_Interface_Library.通讯编辑用例 UIL_编辑 = new 通讯编辑用例();
+            User_Interface_Library.USB通讯编辑用例 UIL_编辑 = new USB通讯编辑用例();
             UIL_编辑.USB_XML_Folder= Main_USB_XML_Folder;
             UIL_编辑.ShowDialog();
         }
 
         private void USB通讯载入用例_Click(object sender, EventArgs e)
         {
-            User_Interface_Library.通讯载入用例 UIL_载入 = new 通讯载入用例();
+            User_Interface_Library.USB通讯载入用例 UIL_载入 = new USB通讯载入用例();
             UIL_载入.USB_XML_Folder = Main_USB_XML_Folder;
             UIL_载入.ShowDialog();
             USB_xml_Number = UIL_载入.xml_Number;

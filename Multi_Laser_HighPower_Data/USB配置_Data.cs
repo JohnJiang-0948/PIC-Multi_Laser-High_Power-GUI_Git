@@ -16,10 +16,6 @@ namespace Multi_Laser_HighPower_Data
         [XmlElement("客户代码")]
         public string customer { set; get; }
 
-        //[Category("USB通讯配置")]
-        //[XmlElement("项目号")]
-        //public string porjectNumber { set; get; }
-
         [Category("USB通讯配置")]
         [XmlElement("波长")]
         public string waveLength { set; get; }

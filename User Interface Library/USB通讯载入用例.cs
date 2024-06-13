@@ -13,32 +13,24 @@ using Multi_Laser_HighPower_Data;
 
 namespace User_Interface_Library
 {
-    public partial class 通讯编辑用例 : Form
+    public partial class USB通讯载入用例 : Form
     {
-        public 通讯编辑用例()
+        public USB通讯载入用例()
         {
             InitializeComponent();
         }
 
         public bool USBMode;
+        public Multi_Laser_HighPower_Data.USB配置_Data USB配置_Data;
+        public string xml_Number;
         public string USB_XML_Folder;
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(Multi_Laser_HighPower_Data.USB配置_Data));
         Multi_Laser_HighPower_Data.USB配置_Data MLHD_Data = new USB配置_Data();
         xmlHelper xmlHelper = new xmlHelper();
 
-        private void USB通讯编辑用例_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void 查找用例_Click(object sender, EventArgs e)
-        {
-            xmlHelper.xmlSearch(USB_XML_Folder,listBox1);
-        }
-       
         private void listBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            if(listBox1.SelectedItem!=null)
+            if (listBox1.SelectedItem != null)
             {
                 string xml_Path = USB_XML_Folder + "\\" + listBox1.SelectedItem.ToString();
                 xmlHelper.xmlDeserialization<USB配置_Data>(xml_Path, out MLHD_Data);
@@ -50,14 +42,20 @@ namespace User_Interface_Library
             }
         }
 
-        private void 编辑用例_Click(object sender, EventArgs e)
+        private void 载入用例_Click(object sender, EventArgs e)
         {
-            string xml_Path = USB_XML_Folder + "\\" + listBox1.SelectedItem.ToString();
-            xmlHelper.xmlSerialization<USB配置_Data>(xml_Path, MLHD_Data);
+            xml_Number = listBox1.SelectedItem.ToString().Replace(".xml", "");
+            USB配置_Data = MLHD_Data;
+            MessageBox.Show(listBox1.SelectedItem.ToString()+ " has been loaded into the system!");
             this.Close();
         }
 
-        private void USB通讯编辑用例_Load(object sender, EventArgs e)
+        private void 查找用例_Click(object sender, EventArgs e)
+        {
+            xmlHelper.xmlSearch(USB_XML_Folder,listBox1);
+        }
+
+        private void 通讯载入用例_Load(object sender, EventArgs e)
         {
 
         }

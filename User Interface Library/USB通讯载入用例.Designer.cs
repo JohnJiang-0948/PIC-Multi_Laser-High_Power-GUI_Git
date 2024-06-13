@@ -1,7 +1,7 @@
 ﻿
 namespace User_Interface_Library
 {
-    partial class 通讯载入用例
+    partial class USB通讯载入用例
     {
         /// <summary>
         /// Required designer variable.

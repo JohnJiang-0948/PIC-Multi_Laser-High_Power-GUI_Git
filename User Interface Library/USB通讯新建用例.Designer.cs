@@ -1,7 +1,7 @@
 ﻿
 namespace User_Interface_Library
 {
-    partial class 通讯新建用例
+    partial class USB通讯新建用例
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace User_Interface_Library
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(通讯新建用例));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USB通讯新建用例));
             this.USB_XML_Name = new System.Windows.Forms.TextBox();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.新建用例 = new System.Windows.Forms.Button();

@@ -16,7 +16,7 @@ namespace User_Interface_Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 通讯新建用例());
+            Application.Run(new USB通讯新建用例());
         }
     }
 }
