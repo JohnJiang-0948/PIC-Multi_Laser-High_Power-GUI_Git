@@ -486,6 +486,19 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
         }
 
+        private void RS232_ClearText_Button_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void RS232_Command_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Command_List_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

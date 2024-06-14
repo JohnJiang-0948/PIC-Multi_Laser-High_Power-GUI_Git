@@ -260,6 +260,9 @@
   <ItemGroup>
     <None Include="Image\057-arrow-left.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\激光器控制_USB.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

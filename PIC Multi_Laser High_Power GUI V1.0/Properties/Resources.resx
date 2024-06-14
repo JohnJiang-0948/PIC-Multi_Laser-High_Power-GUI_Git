@@ -148,8 +148,11 @@
   <data name="script_add4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\script_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="063-control" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\063-control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="057-arrow-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\057-arrow-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="group_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\group_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="page1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +172,8 @@
   <data name="PIC_图标_高清" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\PIC_图标_高清.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="script_save1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\script_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="group_key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\group_key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="script_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\script_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,6 +192,9 @@
   </data>
   <data name="054-arrow-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\054-arrow-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\page_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="change_languange3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\change_languange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,7 +223,7 @@
   <data name="help1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="date_error2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="date_error1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\date_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="script_add5" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -241,8 +247,8 @@
   <data name="script_import3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\script_import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="group_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\group_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="date_error2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\date_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="group_gear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\group_gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +286,11 @@
   <data name="067-home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\067-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="date_error1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\date_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="063-control" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\063-control.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="script_save1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\script_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="067-home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\067-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,9 +331,6 @@
   <data name="group_gear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\group_gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="script_import4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\script_import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="change_languange1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\change_languange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -337,14 +343,11 @@
   <data name="report_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\report_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="script_save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\script_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="script_import4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\script_import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allow_users_edit_ranges" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\allow_users_edit_ranges.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="group_key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\group_key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="group_go2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\group_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,6 +361,9 @@
   <data name="help3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="激光器控制_USB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\激光器控制_USB.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="date_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\date_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -370,13 +376,13 @@
   <data name="help2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="page_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\page_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="script_save3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\script_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="change_languange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\change_languange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="057-arrow-left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\057-arrow-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="激光器控制_USB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\激光器控制_USB.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

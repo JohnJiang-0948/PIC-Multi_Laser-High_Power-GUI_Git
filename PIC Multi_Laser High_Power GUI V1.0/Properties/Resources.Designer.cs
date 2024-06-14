@@ -893,6 +893,26 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 激光器控制_USB {
+            get {
+                object obj = ResourceManager.GetObject("激光器控制_USB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 激光器控制_USB1 {
+            get {
+                object obj = ResourceManager.GetObject("激光器控制_USB1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 网络模式 {
             get {
                 object obj = ResourceManager.GetObject("网络模式", resourceCulture);

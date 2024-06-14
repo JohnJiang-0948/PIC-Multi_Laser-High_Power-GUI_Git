@@ -29,15 +29,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radStatusStrip2 = new Telerik.WinControls.UI.RadStatusStrip();
             this.radLabelElement3 = new Telerik.WinControls.UI.RadLabelElement();
             this.radLabelElement4 = new Telerik.WinControls.UI.RadLabelElement();
@@ -94,16 +94,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label10 = new System.Windows.Forms.Label();
             this.Read_Current_Big = new System.Windows.Forms.TextBox();
             this.Read_Power_Big = new System.Windows.Forms.TextBox();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.uiLine1 = new Sunny.UI.UILine();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.RS232_SerialPort = new System.Windows.Forms.ComboBox();
-            this.Device_Connect = new Sunny.UI.UIButton();
-            this.Close = new Sunny.UI.UIButton();
-            this.Device_Status = new System.Windows.Forms.Label();
             this.管理员显示 = new Telerik.WinControls.UI.RadLabelElement();
-            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -113,6 +104,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.uiLine1 = new Sunny.UI.UILine();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.RS232_SerialPort = new System.Windows.Forms.ComboBox();
+            this.Device_Connect = new Sunny.UI.UIButton();
+            this.Close = new Sunny.UI.UIButton();
+            this.Device_Status = new System.Windows.Forms.Label();
             this.Next_Page1 = new System.Windows.Forms.PictureBox();
             this.Apply_Configuration = new System.Windows.Forms.PictureBox();
             this.Write_Info = new System.Windows.Forms.PictureBox();
@@ -120,6 +120,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Previous_Page = new System.Windows.Forms.PictureBox();
             this.Write_Laser = new System.Windows.Forms.PictureBox();
             this.Read_Laser = new System.Windows.Forms.PictureBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.channel_Label_Setting = new System.Windows.Forms.Label();
+            this.RS232_ClearText_Button = new Sunny.UI.UIButton();
+            this.RS232_Command_Button = new Sunny.UI.UIButton();
+            this.Power = new System.Windows.Forms.TextBox();
+            this.Command_List = new System.Windows.Forms.ComboBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.管理员登录 = new Telerik.WinControls.UI.RadMenuItem();
             this.管理员界面登录 = new Telerik.WinControls.UI.RadMenuItem();
             this.密码修改 = new Telerik.WinControls.UI.RadMenuItem();
@@ -148,14 +157,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.串口协议界面 = new Telerik.WinControls.UI.RadButtonElement();
             this.退出界面 = new Telerik.WinControls.UI.RadButtonElement();
             this.radLabelElement1 = new Telerik.WinControls.UI.RadLabelElement();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuButtonItem11)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Main_tabControl.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.Tab_USB配置.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -164,9 +171,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Channel)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
             this.radMenu1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Next_Page1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apply_Configuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Info)).BeginInit();
@@ -174,6 +181,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             ((System.ComponentModel.ISupportInitialize)(this.Previous_Page)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Laser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Read_Laser)).BeginInit();
+            this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,7 +205,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.radStatusStrip2.RootElement.StretchHorizontally = false;
             this.radStatusStrip2.RootElement.StretchVertically = true;
-            this.radStatusStrip2.Size = new System.Drawing.Size(189, 655);
+            this.radStatusStrip2.Size = new System.Drawing.Size(189, 706);
             this.radStatusStrip2.TabIndex = 2;
             // 
             // radLabelElement3
@@ -240,7 +248,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radLabelElement2,
             this.网络模式显示,
             this.管理员显示});
-            this.radStatusStrip1.Location = new System.Drawing.Point(0, 630);
+            this.radStatusStrip1.Location = new System.Drawing.Point(0, 681);
             this.radStatusStrip1.Name = "radStatusStrip1";
             this.radStatusStrip1.Size = new System.Drawing.Size(1091, 25);
             this.radStatusStrip1.TabIndex = 3;
@@ -320,40 +328,40 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridView1.Location = new System.Drawing.Point(0, 35);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(345, 595);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 646);
             this.dataGridView1.TabIndex = 6;
             // 
             // Column1
@@ -380,17 +388,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Main_tabControl.Location = new System.Drawing.Point(351, 37);
             this.Main_tabControl.Name = "Main_tabControl";
             this.Main_tabControl.SelectedIndex = 0;
-            this.Main_tabControl.Size = new System.Drawing.Size(737, 593);
+            this.Main_tabControl.Size = new System.Drawing.Size(737, 587);
             this.Main_tabControl.TabIndex = 7;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.uiLine1);
-            this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(729, 567);
+            this.tabPage3.Size = new System.Drawing.Size(729, 561);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "主界面";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -401,7 +407,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(729, 567);
+            this.tabPage4.Size = new System.Drawing.Size(729, 561);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "USB配置界面";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -439,40 +445,40 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             // Next_Page
             // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Next_Page.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Next_Page.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Next_Page.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Next_Page.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.Column4});
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Next_Page.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Next_Page.DefaultCellStyle = dataGridViewCellStyle5;
             this.Next_Page.Location = new System.Drawing.Point(3, 89);
             this.Next_Page.Name = "Next_Page";
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Next_Page.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Next_Page.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Next_Page.RowTemplate.Height = 23;
-            this.Next_Page.Size = new System.Drawing.Size(724, 440);
+            this.Next_Page.Size = new System.Drawing.Size(724, 470);
             this.Next_Page.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -503,12 +509,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage7.Controls.Add(this.label9);
             this.tabPage7.Controls.Add(this.label6);
             this.tabPage7.Controls.Add(this.label7);
-            this.tabPage7.Controls.Add(this.Previous_Page);
-            this.tabPage7.Controls.Add(this.Write_Laser);
-            this.tabPage7.Controls.Add(this.Read_Laser);
             this.tabPage7.Controls.Add(this.label5);
             this.tabPage7.Controls.Add(this.comboBox1);
             this.tabPage7.Controls.Add(this.dataGridView_Channel);
+            this.tabPage7.Controls.Add(this.Previous_Page);
+            this.tabPage7.Controls.Add(this.Write_Laser);
+            this.tabPage7.Controls.Add(this.Read_Laser);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -537,40 +543,40 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             // dataGridView_Channel
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Channel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Channel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_Channel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Channel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_Channel.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Channel.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_Channel.Location = new System.Drawing.Point(0, 92);
             this.dataGridView_Channel.Name = "dataGridView_Channel";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_Channel.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Channel.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_Channel.RowTemplate.Height = 23;
-            this.dataGridView_Channel.Size = new System.Drawing.Size(721, 440);
+            this.dataGridView_Channel.Size = new System.Drawing.Size(721, 460);
             this.dataGridView_Channel.TabIndex = 148;
             // 
             // dataGridViewTextBoxColumn4
@@ -612,7 +618,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage5.Controls.Add(this.Read_Power_Big);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(729, 567);
+            this.tabPage5.Size = new System.Drawing.Size(729, 561);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "USB控制界面";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -810,91 +816,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Read_Power_Big.TabIndex = 51;
             this.Read_Power_Big.Text = "2.3";
             // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(729, 567);
-            this.tabPage8.TabIndex = 3;
-            this.tabPage8.Text = "串口协议界面";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // uiLine1
-            // 
-            this.uiLine1.FillColor = System.Drawing.Color.White;
-            this.uiLine1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLine1.LineColor = System.Drawing.Color.Black;
-            this.uiLine1.LineSize = 2;
-            this.uiLine1.Location = new System.Drawing.Point(6, 525);
-            this.uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
-            this.uiLine1.Name = "uiLine1";
-            this.uiLine1.Size = new System.Drawing.Size(724, 10);
-            this.uiLine1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLine1.TabIndex = 64;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.RS232_SerialPort);
-            this.panel1.Controls.Add(this.Device_Connect);
-            this.panel1.Controls.Add(this.Close);
-            this.panel1.Controls.Add(this.Device_Status);
-            this.panel1.Location = new System.Drawing.Point(3, 530);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(727, 45);
-            this.panel1.TabIndex = 63;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 13);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 16);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "SerialPort:";
-            // 
-            // RS232_SerialPort
-            // 
-            this.RS232_SerialPort.FormattingEnabled = true;
-            this.RS232_SerialPort.Location = new System.Drawing.Point(77, 11);
-            this.RS232_SerialPort.Name = "RS232_SerialPort";
-            this.RS232_SerialPort.Size = new System.Drawing.Size(121, 20);
-            this.RS232_SerialPort.TabIndex = 65;
-            // 
-            // Device_Connect
-            // 
-            this.Device_Connect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Device_Connect.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Device_Connect.Location = new System.Drawing.Point(420, 6);
-            this.Device_Connect.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Device_Connect.Name = "Device_Connect";
-            this.Device_Connect.Size = new System.Drawing.Size(119, 30);
-            this.Device_Connect.TabIndex = 63;
-            this.Device_Connect.Text = "Connect";
-            // 
-            // Close
-            // 
-            this.Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Close.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Close.Location = new System.Drawing.Point(573, 6);
-            this.Close.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(111, 30);
-            this.Close.TabIndex = 62;
-            this.Close.Text = "Close";
-            // 
-            // Device_Status
-            // 
-            this.Device_Status.AutoSize = true;
-            this.Device_Status.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Device_Status.ForeColor = System.Drawing.Color.Red;
-            this.Device_Status.Location = new System.Drawing.Point(209, 12);
-            this.Device_Status.Name = "Device_Status";
-            this.Device_Status.Size = new System.Drawing.Size(194, 19);
-            this.Device_Status.TabIndex = 64;
-            this.Device_Status.Text = "-----No Connection to Device";
-            // 
             // 管理员显示
             // 
             this.管理员显示.ForeColor = System.Drawing.Color.Red;
@@ -902,23 +823,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radStatusStrip1.SetSpring(this.管理员显示, false);
             this.管理员显示.Text = "                  管理员模式              ";
             this.管理员显示.TextWrap = true;
-            // 
-            // radMenu1
-            // 
-            this.radMenu1.AutoSize = false;
-            this.radMenu1.Controls.Add(this.tabControl1);
-            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.管理员登录,
-            this.radMenuItem14,
-            this.radMenuItem2,
-            this.RS232配置用例,
-            this.radMenuItem3,
-            this.radMenuItem4,
-            this.radMenuItem5});
-            this.radMenu1.Location = new System.Drawing.Point(0, 0);
-            this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(1091, 35);
-            this.radMenu1.TabIndex = 4;
             // 
             // label1
             // 
@@ -1002,6 +906,110 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label9.TabIndex = 154;
             this.label9.Text = "Previous Page";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.label11.Location = new System.Drawing.Point(418, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(133, 22);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Configure File:";
+            // 
+            // radMenu1
+            // 
+            this.radMenu1.AutoSize = false;
+            this.radMenu1.Controls.Add(this.tabControl1);
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.管理员登录,
+            this.radMenuItem14,
+            this.radMenuItem2,
+            this.RS232配置用例,
+            this.radMenuItem3,
+            this.radMenuItem4,
+            this.radMenuItem5});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(1091, 35);
+            this.radMenu1.TabIndex = 4;
+            // 
+            // uiLine1
+            // 
+            this.uiLine1.FillColor = System.Drawing.Color.White;
+            this.uiLine1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLine1.LineColor = System.Drawing.Color.Black;
+            this.uiLine1.LineSize = 2;
+            this.uiLine1.Location = new System.Drawing.Point(351, 626);
+            this.uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
+            this.uiLine1.Name = "uiLine1";
+            this.uiLine1.Size = new System.Drawing.Size(724, 10);
+            this.uiLine1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLine1.TabIndex = 66;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.RS232_SerialPort);
+            this.panel1.Controls.Add(this.Device_Connect);
+            this.panel1.Controls.Add(this.Close);
+            this.panel1.Controls.Add(this.Device_Status);
+            this.panel1.Location = new System.Drawing.Point(355, 630);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(736, 45);
+            this.panel1.TabIndex = 65;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(-3, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 16);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "SerialPort:";
+            // 
+            // RS232_SerialPort
+            // 
+            this.RS232_SerialPort.FormattingEnabled = true;
+            this.RS232_SerialPort.Location = new System.Drawing.Point(67, 17);
+            this.RS232_SerialPort.Name = "RS232_SerialPort";
+            this.RS232_SerialPort.Size = new System.Drawing.Size(121, 20);
+            this.RS232_SerialPort.TabIndex = 65;
+            // 
+            // Device_Connect
+            // 
+            this.Device_Connect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Device_Connect.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Device_Connect.Location = new System.Drawing.Point(424, 10);
+            this.Device_Connect.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Device_Connect.Name = "Device_Connect";
+            this.Device_Connect.Size = new System.Drawing.Size(119, 30);
+            this.Device_Connect.TabIndex = 63;
+            this.Device_Connect.Text = "Connect";
+            // 
+            // Close
+            // 
+            this.Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Close.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Close.Location = new System.Drawing.Point(586, 10);
+            this.Close.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(111, 30);
+            this.Close.TabIndex = 62;
+            this.Close.Text = "Close";
+            // 
+            // Device_Status
+            // 
+            this.Device_Status.AutoSize = true;
+            this.Device_Status.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Device_Status.ForeColor = System.Drawing.Color.Red;
+            this.Device_Status.Location = new System.Drawing.Point(203, 16);
+            this.Device_Status.Name = "Device_Status";
+            this.Device_Status.Size = new System.Drawing.Size(194, 19);
+            this.Device_Status.TabIndex = 64;
+            this.Device_Status.Text = "-----No Connection to Device";
+            // 
             // Next_Page1
             // 
             this.Next_Page1.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._054_arrow_right2;
@@ -1067,6 +1075,105 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Read_Laser.Size = new System.Drawing.Size(50, 50);
             this.Read_Laser.TabIndex = 153;
             this.Read_Laser.TabStop = false;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackgroundImage = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB;
+            this.tabPage8.Controls.Add(this.label12);
+            this.tabPage8.Controls.Add(this.label13);
+            this.tabPage8.Controls.Add(this.channel_Label_Setting);
+            this.tabPage8.Controls.Add(this.RS232_ClearText_Button);
+            this.tabPage8.Controls.Add(this.RS232_Command_Button);
+            this.tabPage8.Controls.Add(this.Power);
+            this.tabPage8.Controls.Add(this.Command_List);
+            this.tabPage8.Controls.Add(this.richTextBox3);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(729, 561);
+            this.tabPage8.TabIndex = 3;
+            this.tabPage8.Text = "串口协议界面";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB1;
+            this.label12.Location = new System.Drawing.Point(338, 72);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(133, 22);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Configure File:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(485, 71);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 23);
+            this.label13.TabIndex = 23;
+            // 
+            // channel_Label_Setting
+            // 
+            this.channel_Label_Setting.AutoSize = true;
+            this.channel_Label_Setting.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.channel_Label_Setting.ForeColor = System.Drawing.Color.Red;
+            this.channel_Label_Setting.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB1;
+            this.channel_Label_Setting.Location = new System.Drawing.Point(4, 72);
+            this.channel_Label_Setting.Name = "channel_Label_Setting";
+            this.channel_Label_Setting.Size = new System.Drawing.Size(74, 32);
+            this.channel_Label_Setting.TabIndex = 22;
+            this.channel_Label_Setting.Text = "CH1";
+            // 
+            // RS232_ClearText_Button
+            // 
+            this.RS232_ClearText_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RS232_ClearText_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.RS232_ClearText_Button.Location = new System.Drawing.Point(192, 259);
+            this.RS232_ClearText_Button.MinimumSize = new System.Drawing.Size(1, 1);
+            this.RS232_ClearText_Button.Name = "RS232_ClearText_Button";
+            this.RS232_ClearText_Button.Size = new System.Drawing.Size(117, 35);
+            this.RS232_ClearText_Button.TabIndex = 20;
+            this.RS232_ClearText_Button.Text = "Clear Text";
+            // 
+            // RS232_Command_Button
+            // 
+            this.RS232_Command_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RS232_Command_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.RS232_Command_Button.Location = new System.Drawing.Point(10, 259);
+            this.RS232_Command_Button.MinimumSize = new System.Drawing.Size(1, 1);
+            this.RS232_Command_Button.Name = "RS232_Command_Button";
+            this.RS232_Command_Button.Size = new System.Drawing.Size(130, 35);
+            this.RS232_Command_Button.TabIndex = 21;
+            this.RS232_Command_Button.Text = "Command";
+            // 
+            // Power
+            // 
+            this.Power.Location = new System.Drawing.Point(237, 177);
+            this.Power.Multiline = true;
+            this.Power.Name = "Power";
+            this.Power.Size = new System.Drawing.Size(72, 27);
+            this.Power.TabIndex = 19;
+            // 
+            // Command_List
+            // 
+            this.Command_List.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Command_List.FormattingEnabled = true;
+            this.Command_List.Location = new System.Drawing.Point(10, 177);
+            this.Command_List.Name = "Command_List";
+            this.Command_List.Size = new System.Drawing.Size(221, 27);
+            this.Command_List.TabIndex = 18;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(333, 174);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(389, 356);
+            this.richTextBox3.TabIndex = 17;
+            this.richTextBox3.Text = "";
             // 
             // 管理员登录
             // 
@@ -1280,24 +1387,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radLabelElement1.TextWrap = true;
             this.radLabelElement1.UseCompatibleTextRendering = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label11.Location = new System.Drawing.Point(418, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 22);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Configure File:";
-            // 
             // RadForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 655);
+            this.ClientSize = new System.Drawing.Size(1280, 706);
+            this.Controls.Add(this.uiLine1);
             this.Controls.Add(this.Main_tabControl);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.radMenu1);
             this.Controls.Add(this.radStatusStrip1);
@@ -1319,7 +1417,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Main_tabControl.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.Tab_USB配置.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -1332,10 +1429,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage5.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
             this.radMenu1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Next_Page1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apply_Configuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Info)).EndInit();
@@ -1343,6 +1440,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             ((System.ComponentModel.ISupportInitialize)(this.Previous_Page)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Laser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Read_Laser)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1428,13 +1527,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private Telerik.WinControls.UI.RadMenuItem RS232载入配置用例;
         private Telerik.WinControls.UI.RadMenuItem USB通讯新建用例;
         private Telerik.WinControls.UI.RadLabelElement 网络模式显示;
-        private Sunny.UI.UILine uiLine1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox RS232_SerialPort;
-        private Sunny.UI.UIButton Device_Connect;
-        private Sunny.UI.UIButton Close;
-        private System.Windows.Forms.Label Device_Status;
         private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.UI.RadMenuItem 管理员界面登录;
         private Telerik.WinControls.UI.RadMenuItem 密码修改;
@@ -1461,5 +1553,20 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private System.Windows.Forms.PictureBox Read_Laser;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label channel_Label_Setting;
+        private Sunny.UI.UIButton RS232_ClearText_Button;
+        private Sunny.UI.UIButton RS232_Command_Button;
+        private System.Windows.Forms.TextBox Power;
+        private System.Windows.Forms.ComboBox Command_List;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private Sunny.UI.UILine uiLine1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox RS232_SerialPort;
+        private Sunny.UI.UIButton Device_Connect;
+        private Sunny.UI.UIButton Close;
+        private System.Windows.Forms.Label Device_Status;
     }
 }
