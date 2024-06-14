@@ -23,7 +23,7 @@ namespace User_Interface_Library
             dataGridView1.Columns.Add(Colunm2, Colunm2);
             dataGridView1.Columns[Colunm1].Width = 150;
             dataGridView1.Columns[Colunm2].Width = 250;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 30; i++)
             {
                 dataGridView1.Rows.Add();
             }
@@ -48,6 +48,7 @@ namespace User_Interface_Library
             try
             {
                 xmlHelper.Set_UsbXml(RS232_XML_Path, dataGridView1, propertyGrid1);
+                MessageBox.Show("Successfully to create the XML File.");
             }
             catch
             {

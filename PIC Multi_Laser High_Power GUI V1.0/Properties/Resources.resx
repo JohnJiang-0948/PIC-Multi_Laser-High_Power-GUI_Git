@@ -151,6 +151,9 @@
   <data name="languange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\languange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="group_key2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\group_key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PIC_图标_高清" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\PIC_图标_高清.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,6 +190,9 @@
   <data name="网络模式1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\网络模式.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="group_key3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\group_key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PIC_图标_高清2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\PIC_图标_高清.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -206,6 +212,9 @@
     <value>..\Image\script_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="script_add5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\script_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="script_add6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\script_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="联机模式1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -307,6 +316,9 @@
   <data name="report_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\report_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="group_gear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\group_gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="allow_users_edit_ranges" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\allow_users_edit_ranges.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -337,7 +349,7 @@
   <data name="script_add4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\script_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="script_add6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\script_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="group_go2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\group_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

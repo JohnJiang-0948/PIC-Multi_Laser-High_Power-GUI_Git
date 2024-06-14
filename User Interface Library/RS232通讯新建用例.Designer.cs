@@ -29,6 +29,7 @@ namespace User_Interface_Library
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RS232通讯新建用例));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -83,13 +84,13 @@ namespace User_Interface_Library
             this.dataGridView1.Location = new System.Drawing.Point(340, 131);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(286, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(433, 326);
             this.dataGridView1.TabIndex = 11;
             // 
             // 新建用例
             // 
             this.新建用例.Image = global::User_Interface_Library.Properties.Resources.script_add;
-            this.新建用例.Location = new System.Drawing.Point(644, 131);
+            this.新建用例.Location = new System.Drawing.Point(594, 73);
             this.新建用例.Name = "新建用例";
             this.新建用例.Size = new System.Drawing.Size(136, 43);
             this.新建用例.TabIndex = 8;
@@ -133,6 +134,7 @@ namespace User_Interface_Library
             this.Controls.Add(this.新建用例);
             this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.RS232_XML_Name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RS232通讯新建用例";
             this.Text = "RS232通讯新建用例";

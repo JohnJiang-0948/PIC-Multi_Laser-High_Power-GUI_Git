@@ -19,6 +19,7 @@ namespace User_Interface_Library
         public string Colunm1 = "Instruction_Semantics";
         public string Colunm2 = "Instruction_Summary";
         RS232配置_CommonData CD = new RS232配置_CommonData();
+        public DataTable tableData;
 
         public void xmlSearch(string Filefolder,ListBox listBox)
         {
@@ -120,7 +121,7 @@ namespace User_Interface_Library
             xmlDoc.Load(xmlFilePath);
 
             XmlNode xmlNode = xmlDoc.DocumentElement;
-            DataTable tableData = new DataTable();
+            tableData = new DataTable();
             tableData.Columns.Add(Colunm1);
             tableData.Columns.Add(Colunm2);
 

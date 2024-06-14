@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SunnyUI">
+      <HintPath>.\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common">
+      <HintPath>.\SunnyUI.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +49,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2019.1.219.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -52,6 +61,18 @@
     </Compile>
     <Compile Include="RS232通讯新建用例.Designer.cs">
       <DependentUpon>RS232通讯新建用例.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RS232通讯编辑用例.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RS232通讯编辑用例.Designer.cs">
+      <DependentUpon>RS232通讯编辑用例.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RS232通讯载入用例.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RS232通讯载入用例.Designer.cs">
+      <DependentUpon>RS232通讯载入用例.cs</DependentUpon>
     </Compile>
     <Compile Include="xmlHelper.cs" />
     <Compile Include="USB通讯新建用例.cs">
@@ -72,6 +93,25 @@
     <Compile Include="USB通讯载入用例.Designer.cs">
       <DependentUpon>USB通讯载入用例.cs</DependentUpon>
     </Compile>
+    <Compile Include="XML文件另存为.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML文件另存为.Designer.cs">
+      <DependentUpon>XML文件另存为.cs</DependentUpon>
+    </Compile>
+    <Compile Include="密码修改.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="密码修改.Designer.cs">
+      <DependentUpon>密码修改.cs</DependentUpon>
+    </Compile>
+    <Compile Include="管理员登录.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="管理员登录.Designer.cs">
+      <DependentUpon>管理员登录.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +125,12 @@
     <EmbeddedResource Include="RS232通讯新建用例.resx">
       <DependentUpon>RS232通讯新建用例.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RS232通讯编辑用例.resx">
+      <DependentUpon>RS232通讯编辑用例.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RS232通讯载入用例.resx">
+      <DependentUpon>RS232通讯载入用例.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USB通讯新建用例.resx">
       <DependentUpon>USB通讯新建用例.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +139,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USB通讯载入用例.resx">
       <DependentUpon>USB通讯载入用例.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XML文件另存为.resx">
+      <DependentUpon>XML文件另存为.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="密码修改.resx">
+      <DependentUpon>密码修改.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="管理员登录.resx">
+      <DependentUpon>管理员登录.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -127,6 +182,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RS232背景图.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\040-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\041-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\070-refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

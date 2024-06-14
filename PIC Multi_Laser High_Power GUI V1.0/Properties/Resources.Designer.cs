@@ -313,6 +313,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap group_gear2 {
+            get {
+                object obj = ResourceManager.GetObject("group_gear2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap group_go {
             get {
                 object obj = ResourceManager.GetObject("group_go", resourceCulture);
@@ -333,6 +343,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap group_go2 {
+            get {
+                object obj = ResourceManager.GetObject("group_go2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap group_key {
             get {
                 object obj = ResourceManager.GetObject("group_key", resourceCulture);
@@ -346,6 +366,26 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         internal static System.Drawing.Bitmap group_key1 {
             get {
                 object obj = ResourceManager.GetObject("group_key1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap group_key2 {
+            get {
+                object obj = ResourceManager.GetObject("group_key2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap group_key3 {
+            get {
+                object obj = ResourceManager.GetObject("group_key3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="041-remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\041-remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="登录界面背景图片2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\登录界面背景图片2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="激光器控制_USB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\激光器控制_USB.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RS232背景图" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RS232背景图.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="script_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\script_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="040-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\040-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="USB图片" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\USB图片.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="激光器控制_USB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\激光器控制_USB.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="070-refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\070-refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

@@ -34,7 +34,7 @@ namespace Multi_Laser_HighPower_Data
         public string LaserOnOff_Read { get; set; }
 
         [Category("Common Data")]
-        [XmlElement("激光器功率比率为千分比?")]
+        [XmlElement("激光器功率比率为千分比")]
         public string permilleRatio { get; set; }
 
         [Category("Common Data")]

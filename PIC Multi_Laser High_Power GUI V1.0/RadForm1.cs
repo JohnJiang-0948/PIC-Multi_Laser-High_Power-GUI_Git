@@ -20,6 +20,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public RadForm1()
         {
             InitializeComponent();
+            Admin = false;
         }
         //类库初始化
         USB类库.USB_BASIC USB_BASIC = new USB类库.USB_BASIC();
@@ -363,22 +364,71 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             UIL_RS232新建.ShowDialog();
         }
 
+        private void RS232编辑配置用例_Click(object sender, EventArgs e)
+        {
+            User_Interface_Library.RS232通讯编辑用例 UIL_RS232编辑 = new RS232通讯编辑用例();
+            UIL_RS232编辑.RS232_XML_Folder = Main_RS232_Folder;
+            UIL_RS232编辑.ShowDialog();
+        }
+
+        private void RS232载入配置用例_Click(object sender, EventArgs e)
+        {
+            User_Interface_Library.RS232通讯载入用例 UIL_RS232载入 = new RS232通讯载入用例();
+            UIL_RS232载入.RS232_XML_Folder = Main_RS232_Folder;
+            UIL_RS232载入.ShowDialog();
+        }
+
         private void Apply_Configuration_Click(object sender, EventArgs e)
         {
             USB_Configuration_Apply(dataGridView_Laser);
         }
 
         public void USB_Configuration_Apply(DataGridView dataGridView)
-        {
-            dataGridView.Rows[1].Cells[1].Value = USB配置_Data.waveLength;
-            dataGridView.Rows[6].Cells[1].Value = USB配置_Data.vender_Name;
-            dataGridView.Rows[7].Cells[1].Value = USB配置_Data.contact;
-            dataGridView.Rows[8].Cells[1].Value = USB配置_Data.tel;
-            dataGridView.Rows[0].Cells[3].Value = USB配置_Data.dt_Seq;
-            dataGridView.Rows[1].Cells[3].Value = USB配置_Data.ch_Seq;
+        { 
+            if(USB_Configuration.Text!="")
+            {
+                dataGridView.Rows[1].Cells[1].Value = USB配置_Data.waveLength;
+                dataGridView.Rows[6].Cells[1].Value = USB配置_Data.vender_Name;
+                dataGridView.Rows[7].Cells[1].Value = USB配置_Data.contact;
+                dataGridView.Rows[8].Cells[1].Value = USB配置_Data.tel;
+                dataGridView.Rows[0].Cells[3].Value = USB配置_Data.dt_Seq;
+                dataGridView.Rows[1].Cells[3].Value = USB配置_Data.ch_Seq;
+            }
         }
 
 
+
+
+
+
+        #endregion
+
+        public bool Admin;
+        #region 界面—管理员登录
+        private void 管理员界面登录_Click(object sender, EventArgs e)
+        {
+            if(Admin==false)
+            {
+                管理员登录 登录 = new 管理员登录();
+                登录.ShowDialog();
+                Admin = 登录.Admin;
+            }
+        }
+
+        private void 密码修改_Click(object sender, EventArgs e)
+        {
+            密码修改 修改 = new 密码修改();
+            修改.ShowDialog();
+        }
+
+        private void 管理员退出_Click(object sender, EventArgs e)
+        {
+            if(Admin=true)
+            {
+                Admin = false;
+                MessageBox.Show("Successfully Login Out the Admin Mode.");
+            }
+        }
 
         #endregion
 
