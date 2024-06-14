@@ -248,6 +248,18 @@
   <ItemGroup>
     <None Include="Image\report_go.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\002-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\003-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\053-paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\057-arrow-left.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

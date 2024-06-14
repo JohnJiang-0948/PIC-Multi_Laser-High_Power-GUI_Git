@@ -43,6 +43,7 @@ namespace User_Interface_Library
             {
                 string xml_Path = USB_XML_Folder + "\\" + listBox1.SelectedItem.ToString();
                 xmlHelper.xmlDeserialization<USB配置_Data>(xml_Path, out MLHD_Data);
+                propertyGrid1.SelectedObject = MLHD_Data;
             }
             else
             {

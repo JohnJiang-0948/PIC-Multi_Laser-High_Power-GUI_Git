@@ -28,6 +28,8 @@ namespace User_Interface_Library
             }
             else
             {
+                Password_Default.Text = "";
+                Password_New.Text = "";
                 MessageBox.Show("Failed to update the Admin Password.Please check and try again.");
             }
         }

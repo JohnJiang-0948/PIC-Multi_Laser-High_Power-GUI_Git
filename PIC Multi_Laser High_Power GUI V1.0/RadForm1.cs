@@ -20,7 +20,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public RadForm1()
         {
             InitializeComponent();
-            Admin = false;
+            登录_Init();
+            tabcontrolHide(Main_tabControl);
+            tabcontrolHide(Tab_USB配置);
         }
         //类库初始化
         USB类库.USB_BASIC USB_BASIC = new USB类库.USB_BASIC();
@@ -55,6 +57,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 Application.DoEvents();
             }
         }
+        public void tabcontrolHide(TabControl tabControl)
+        {
+            tabControl.Appearance = TabAppearance.FlatButtons;
+            tabControl.ItemSize = new Size(0, 1);
+            tabControl.SizeMode = TabSizeMode.Fixed;
+        }
 
         #endregion
 
@@ -67,7 +75,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public void USB_Protocol_Init()
         {
             USB_Connect = false;
-            USB_BASIC.GridviewInit(dataGridView_Laser, dataGridView_Channel);
+            USB_BASIC.GridviewInit(Next_Page, dataGridView_Channel);
         }
 
         public void USB_Event()
@@ -137,21 +145,21 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                     USB类库.USB_BASIC.SetCH((byte)USB_Channel);
                     USB_BASIC.Unseal();
                     Delay(500);
-                    uSB_Control_Info.Get_Info(dataGridView_Laser);
-                    uSB_Control_RT.Get_RT(dataGridView_Laser);
-                    uSB_Control_LS.Get_LS(dataGridView_Laser);
-                    uSB_Control_MyCollect.Get_MyCollect1(dataGridView_Laser);
+                    uSB_Control_Info.Get_Info(Next_Page);
+                    uSB_Control_RT.Get_RT(Next_Page);
+                    uSB_Control_LS.Get_LS(Next_Page);
+                    uSB_Control_MyCollect.Get_MyCollect1(Next_Page);
                 }
                 catch
                 {
                     MessageBox.Show("Failed get the Laser Info.Please try again.");
-                    Reset_Datagridview(dataGridView_Laser);
+                    Reset_Datagridview(Next_Page);
                 }
                 USB_Protocol_Close();
             }
             else
             {
-                Reset_Datagridview(dataGridView_Laser);
+                Reset_Datagridview(Next_Page);
                 MessageBox.Show("Please check the USB Connection and try again.");
             }
         }
@@ -166,9 +174,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                     USB类库.USB_BASIC.SetCH((byte)USB_Channel);
                     USB_BASIC.Unseal();
                     Delay(500);
-                    uSB_Control_Info.Set_Info(dataGridView_Laser);
-                    uSB_Control_RT.Set_RT(dataGridView_Laser);
-                    uSB_Control_LS.Set_LS(dataGridView_Laser);
+                    uSB_Control_Info.Set_Info(Next_Page);
+                    uSB_Control_RT.Set_RT(Next_Page);
+                    uSB_Control_LS.Set_LS(Next_Page);
                     MessageBox.Show("Successfully complete the Laser Configuration.");
                 }
                 catch
@@ -289,6 +297,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             datagridview.AllowUserToAddRows = false;
         }
 
+        private void Next_Page1_Click(object sender, EventArgs e)
+        {
+            Tab_USB配置.SelectedIndex = 1;
+        }
+
+        private void Previous_Page_Click(object sender, EventArgs e)
+        {
+            Tab_USB配置.SelectedIndex = 0;
+        }
+
         #endregion
 
 
@@ -314,7 +332,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 set_External_Net_Mode();
                 External_Net_Mode = true;
-                网络模式显示.Text = "----------外部单机模式-----------";
+                网络模式显示.Text = "                   ---外部单机模式---                 ";
                 MessageBox.Show("The system has been switched to external Network mode!");
             }            
         }
@@ -325,12 +343,13 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 set_Internal_Net_Mode();
                 External_Net_Mode = false;
-                网络模式显示.Text = "----------内部联网模式-----------";
+                网络模式显示.Text = "                   ---内部单机模式---                 ";
                 MessageBox.Show("The system has been switched to internal Network mode!");
             }
         }
 
         #endregion
+
 
 
         #region //界面—用例配置
@@ -355,7 +374,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             UIL_载入.ShowDialog();
             USB_xml_Number = UIL_载入.xml_Number;
             USB配置_Data = UIL_载入.USB配置_Data;
-            USB_Configuration.Text = USB_xml_Number;
+            USB_Configuration.Text = USB_xml_Number+".xml";
         }
         private void RS232新建配置用例_Click(object sender, EventArgs e)
         {
@@ -380,7 +399,14 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
         private void Apply_Configuration_Click(object sender, EventArgs e)
         {
-            USB_Configuration_Apply(dataGridView_Laser);
+            if(USB_Configuration.Text!="")
+            {
+                USB_Configuration_Apply(Next_Page);
+            }
+            else
+            {
+                MessageBox.Show("Please import the Configuration File first.");
+            }
         }
 
         public void USB_Configuration_Apply(DataGridView dataGridView)
@@ -403,8 +429,18 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
         #endregion
 
+
         public bool Admin;
         #region 界面—管理员登录
+
+
+        public void 登录_Init()
+        {
+            Admin = false;
+            管理员显示.Text = "                  操作员模式              ";
+            管理员显示.ForeColor = Color.Black;
+        }
+
         private void 管理员界面登录_Click(object sender, EventArgs e)
         {
             if(Admin==false)
@@ -412,6 +448,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 管理员登录 登录 = new 管理员登录();
                 登录.ShowDialog();
                 Admin = 登录.Admin;
+                if(Admin==true)
+                {
+                    管理员显示.Text = "                  管理员模式              ";
+                    管理员显示.ForeColor = Color.Red;
+                }
+                else
+                {
+                    管理员显示.Text = "                  操作员模式              ";
+                    管理员显示.ForeColor = Color.Black;
+                }
             }
         }
 
@@ -423,14 +469,22 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
         private void 管理员退出_Click(object sender, EventArgs e)
         {
-            if(Admin=true)
+            if(Admin==true)
             {
                 Admin = false;
                 MessageBox.Show("Successfully Login Out the Admin Mode.");
+                管理员显示.Text = "                  操作员模式              ";
+                管理员显示.ForeColor = Color.Black;
             }
         }
 
-        #endregion
+
+        #endregion 
+
+        private void 网络模式显示_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
     }

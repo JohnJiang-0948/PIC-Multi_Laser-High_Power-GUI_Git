@@ -29,6 +29,7 @@ namespace User_Interface_Library
             }
             else
             {
+                Password.Text = "";
                 Admin = false;
                 MessageBox.Show("Failed Admin Password.Please check and try again.");
             }
