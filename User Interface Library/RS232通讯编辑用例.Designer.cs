@@ -29,6 +29,7 @@ namespace User_Interface_Library
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RS232通讯编辑用例));
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -127,27 +128,27 @@ namespace User_Interface_Library
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(67, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 15;
-            this.label2.Text = "列表刷新";
+            this.label2.Text = "Refresh";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(449, 80);
+            this.label3.Location = new System.Drawing.Point(477, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(23, 12);
             this.label3.TabIndex = 15;
-            this.label3.Text = "指令增加";
+            this.label3.Text = "Add";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(645, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 15;
-            this.label4.Text = "指令删除";
+            this.label4.Text = "Delete";
             // 
             // pictureBox2
             // 
@@ -197,6 +198,7 @@ namespace User_Interface_Library
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.propertyGrid1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RS232通讯编辑用例";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

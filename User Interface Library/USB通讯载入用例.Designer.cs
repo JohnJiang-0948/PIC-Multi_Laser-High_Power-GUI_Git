@@ -29,6 +29,7 @@ namespace User_Interface_Library
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USB通讯载入用例));
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -86,7 +87,7 @@ namespace User_Interface_Library
             this.查找用例.UseVisualStyleBackColor = true;
             this.查找用例.Click += new System.EventHandler(this.查找用例_Click);
             // 
-            // 通讯载入用例
+            // USB通讯载入用例
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +98,8 @@ namespace User_Interface_Library
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.propertyGrid1);
-            this.Name = "通讯载入用例";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "USB通讯载入用例";
             this.Text = "通讯载入用例";
             this.Load += new System.EventHandler(this.通讯载入用例_Load);
             this.ResumeLayout(false);

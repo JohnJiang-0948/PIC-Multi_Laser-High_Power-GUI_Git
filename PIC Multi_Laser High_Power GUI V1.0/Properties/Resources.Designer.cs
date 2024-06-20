@@ -353,6 +353,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Green1111 {
+            get {
+                object obj = ResourceManager.GetObject("Green1111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Green222 {
             get {
                 object obj = ResourceManager.GetObject("Green222", resourceCulture);

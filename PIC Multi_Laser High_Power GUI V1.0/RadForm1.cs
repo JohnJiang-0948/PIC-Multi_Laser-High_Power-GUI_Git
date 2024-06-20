@@ -10,6 +10,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using User_Interface_Library;
 using Multi_Laser_HighPower_Data;
+using System.Text.RegularExpressions;
 
 
 
@@ -23,6 +24,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             登录_Init();
             tabcontrolHide(Main_tabControl);
             tabcontrolHide(Tab_USB配置);
+            RS232_Open = false;
+            Connect_OK(true);
+            RS232_SerialPort.Items.Clear();
+            RS232_DeviceSearch();
         }
         //类库初始化
         USB类库.USB_BASIC USB_BASIC = new USB类库.USB_BASIC();
@@ -36,7 +41,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public Multi_Laser_HighPower_Data.USB配置_Data USB配置_Data;
         public string USB_xml_Number;
         public string Main_RS232_Folder;
-
 
         private void RadForm1_Load(object sender, EventArgs e)
         {
@@ -249,7 +253,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public void Main_Change_TabControl(object sender,EventArgs e)
         {
             RadButtonElement Click_Button = sender as RadButtonElement;
-            if(Click_Button.Name.Contains("主 界面"))
+            if(Click_Button.Name.Contains("主"))
             {
                 Main_tabControl.SelectedIndex = 0;
             }
@@ -351,7 +355,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         #endregion
 
 
-
         #region //界面—用例配置
         private void USB通讯新建用例_Click(object sender, EventArgs e)
         {
@@ -395,6 +398,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             User_Interface_Library.RS232通讯载入用例 UIL_RS232载入 = new RS232通讯载入用例();
             UIL_RS232载入.RS232_XML_Folder = Main_RS232_Folder;
             UIL_RS232载入.ShowDialog();
+            RCD = UIL_RS232载入.RCD;
+            Rest_DataTable = UIL_RS232载入.Rest_DataTable;
+            主界面_Configure.Text = UIL_RS232载入.RS232_XML;
+            串口协议_Configure.Text= UIL_RS232载入.RS232_XML;
+            RSCL.SerialPortClose();
+            Device_Connect_Refresh();
         }
 
         private void Apply_Configuration_Click(object sender, EventArgs e)
@@ -422,17 +431,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             }
         }
 
-
-
-
-
-
         #endregion
 
 
         public bool Admin;
-        #region 界面—管理员登录
 
+        #region 界面—管理员登录
 
         public void 登录_Init()
         {
@@ -478,7 +482,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             }
         }
 
-
         #endregion 
 
         private void 网络模式显示_Click(object sender, EventArgs e)
@@ -500,5 +503,314 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         {
 
         }
+
+
+        #region//界面—RS232控制
+
+        RS232类库.RS232_Control RSCL = new RS232类库.RS232_Control();
+        List<string> Device_List = new List<string>();
+        public bool RS232_Open;
+        public RS232配置_CommonData RCD;
+        public DataTable Rest_DataTable;
+        public List<string> WaveList;
+
+        public void RS232_DeviceSearch()
+        {
+            Device_List = new List<string>();
+            RSCL.SerialPortSearch(Device_List);
+            foreach(string Device in Device_List)
+            {
+                RS232_SerialPort.Items.Add(Device);
+            }
+        }
+
+        public void RS232_DeviceOpen()
+        {
+            if(RS232_SerialPort.Text!="")
+            {
+                try
+                {
+                    RSCL.SerialPortOpen(RS232_SerialPort.Text);
+                    RS232_Open = true;
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to open the device. Please check and set again.");
+                    RS232_Open = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Failed to open the device. Please check and set again.");
+                RS232_Open = false;
+            }
+        }
+
+        public void RS232_DeviceClose()
+        {
+            try
+            {
+                RSCL.SerialPortClose();
+            }
+            catch
+            {
+                MessageBox.Show("Failed to close the device. Please check and set again.");
+            }
+            RS232_Open = false;
+            Device_Status.Text = "-----No Connection to Device";
+            Device_Status.ForeColor = Color.Red;
+            dataGridView1.Rows.Clear();
+            Connect_OK(true);
+        }
+
+        public bool RS232_Init(out List<bool> CH_ONOFF_Read)
+        {
+            string Wave_Str;
+            string Temp_Str;
+            string Feedback_Str;
+            bool RS232_Init;
+            bool ONOFF;
+            CH_ONOFF_Read = new List<bool>();
+            if((RS232_Open==true)&(RCD!=null))
+            {
+                Wave_Str=RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserChannel_Read+"\r\n");
+                WaveList = RS232_WaveList_Convert(Wave_Str);
+                try
+                {
+                    RS232_Init = true;
+                    for (int i = 0; i < WaveList.Count; i++)
+                    {
+                        Temp_Str = RCD.LaserOnOff_Read.Replace("*", i.ToString());
+                        Feedback_Str=RSCL.SerialPortWrite(RS232_SerialPort.Text, Temp_Str + "\r\n");
+                        RS232_Init=Process_Feedback_Str(Feedback_Str, out ONOFF);
+                        if(RS232_Init==false)
+                        {
+                            break;
+                        }
+                        CH_ONOFF_Read.Add(ONOFF);
+                    }
+                }
+                catch
+                {
+                    RS232_Init = false;
+                }
+            }
+            else
+            {
+                RS232_Init = false;
+            }
+            return RS232_Init;
+        }
+
+        public bool Process_Feedback_Str(string Temp_str,out bool ONOFF)
+        {
+            bool Init_OK;
+            char[] Temp_char;
+            List<char> char_List = new List<char>();
+            Temp_char = Temp_str.ToCharArray();
+            foreach(char temp in Temp_str)
+            {
+                if((temp>='0')&(temp <='9'))
+                {
+                    char_List.Add(temp);
+                }
+            }
+            string Process_Str = string.Concat(char_List);
+            if(Process_Str=="1")
+            {
+                ONOFF = true;
+                Init_OK = true;
+            }
+            else if(Process_Str == "0")
+            {
+                ONOFF = false;
+                Init_OK = true;
+            }
+            else
+            {
+                ONOFF = false;
+                Init_OK = false;
+            }
+            return Init_OK;
+        }
+
+        public List<string> RS232_WaveList_Convert(string Orgin_Str)
+        {
+            List<string> waveList = new List<string>();
+            string pattern = @"[^A-Za-z0-9\s]";
+            string process_Temp = Regex.Replace(Orgin_Str, pattern, "");
+            process_Temp = process_Temp.Replace("A CHMAP ", "").TrimEnd();
+            string[] waveArray = process_Temp.Split(' ');
+            foreach (string wave in waveArray)
+            {
+                waveList.Add(wave);
+            }
+            return waveList;
+        }
+        
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+            RS232_SerialPort.Items.Clear();
+            RS232_DeviceSearch();
+        }
+
+        public void Connect_OK(bool Connect_OK)
+        {
+            if(Connect_OK==true)
+            {
+                Device_Connect.Visible = true;
+                Device_Close.Visible = false;
+            }
+            else
+            {
+                Device_Connect.Visible = false;
+                Device_Close.Visible = true;
+            }
+        }
+
+        public void Device_Connect_Refresh()
+        {
+            bool Init_OK;
+            List<bool> CH_ONOFF_Read = new List<bool>();
+            RS232_DeviceOpen();
+            Info_FW.Text = "";
+            Info_Model.Text = "";
+            Info_PN.Text = "";
+            Info_SN.Text = "";
+            if ((RS232_Open == true) & (RCD != null))
+            {
+                Init_OK = RS232_Init(out CH_ONOFF_Read);
+                if (Init_OK == false)
+                {
+                    RS232_DeviceClose();
+                    MessageBox.Show("Please check the import script first and check again.");
+                    Device_Status.Text = "-----No Connection to Device";
+                    Device_Status.ForeColor = Color.Red;
+                    Connect_OK(true);
+                }
+                else
+                {
+                    Device_Status.Text = "--------Connected to Device";
+                    Device_Status.ForeColor = Color.Green;
+                    Connect_OK(false);
+                    RS232_GetALLInfo();
+                    RS232_Datagridview_Init(dataGridView1, WaveList, CH_ONOFF_Read);
+
+                }
+            }
+            else
+            {
+                RS232_DeviceClose();
+                Device_Status.Text = "-----No Connection to Device";
+                Device_Status.ForeColor = Color.Red;
+                Connect_OK(true);
+                MessageBox.Show("Please check the Laser connection or import script first.");
+            }
+        }
+
+        private void Device_Connect_Click(object sender, EventArgs e)
+        {
+            Device_Connect_Refresh();
+        }
+
+        private void Device_Close_Click(object sender, EventArgs e)
+        {
+            RS232_DeviceClose();
+            RS232_Open = false;
+            RS232_GetALLInfo();
+        }
+
+        public void RS232_Datagridview_Init(DataGridView datagridview, List<string> wave_List, List<bool> CH_ONOFF_Read)
+        {
+            for (int i = 0; i < wave_List.Count(); i++)
+            {
+                datagridview.Rows.Add();
+                datagridview.Rows[i].Height = 30;
+                if (CH_ONOFF_Read[i] == true)
+                {
+                    datagridview.Rows[i].Cells[0].Value = Properties.Resources.Green222;
+                }
+                else
+                {
+                    datagridview.Rows[i].Cells[0].Value = Properties.Resources.Green111;
+                }
+                datagridview.Rows[i].Cells[1].Value = "CH" + i;
+                datagridview.Rows[i].Cells[2].Value = wave_List[i];
+            }
+            datagridview.BorderStyle = BorderStyle.None;
+            datagridview.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            datagridview.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            datagridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            datagridview.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
+            datagridview.DefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
+            datagridview.MultiSelect = false;
+            datagridview.AllowUserToAddRows = false;
+        }
+
+        public void RS232_GetALLInfo()
+        {
+            if(RS232_Open==true)
+            {
+                try
+                {
+                    Info_FW.Text = RS232_GetInfo_Process(RCD.LaserFWVersion_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserFWVersion_Read+"\r\n"));
+                    Info_Model.Text= RS232_GetInfo_Process(RCD.LaserModel_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserModel_Read + "\r\n"));
+                    Info_PN.Text= RS232_GetInfo_Process(RCD.LaserPN_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserPN_Read + "\r\n"));
+                    Info_SN.Text = RS232_GetInfo_Process(RCD.LaserSN_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserSN_Read + "\r\n"));
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to get the Laser Information.");
+                    Info_FW.Text = "";
+                    Info_Model.Text = "";
+                    Info_PN.Text = "";
+                    Info_SN.Text = "";
+                }
+            }
+            else
+            {
+                Info_FW.Text = "";
+                Info_Model.Text = "";
+                Info_PN.Text = "";
+                Info_SN.Text = "";
+            }
+        }
+
+        #endregion
+
+        #region//RS232指令解析
+
+        public bool RS232_SetCMD_Process(string Orgin_SetCMD)
+        {
+            bool Judge;
+            if (Orgin_SetCMD.Contains("A "))
+            {
+                Judge = true;
+            }
+            else
+            {
+                Judge = false;
+            }
+            return Judge;
+        }
+
+        public string RS232_GetCMD_Process(string Orgin_GetCMD, string Orgin_Answers)
+        {
+            string Temp_Str;
+            Orgin_GetCMD = Regex.Replace(Orgin_GetCMD, @"[^A-Za-z\s]", "");
+            Temp_Str = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            return Temp_Str;
+        }
+
+        public string RS232_GetInfo_Process(string Orgin_GetCMD, string Orgin_Answers)
+        {
+            string Temp_Answers;
+            Temp_Answers = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            return Temp_Answers;
+        }
+
+        #endregion
+
+
     }
 }

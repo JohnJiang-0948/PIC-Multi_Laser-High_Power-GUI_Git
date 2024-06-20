@@ -29,6 +29,7 @@ namespace User_Interface_Library
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RS232通讯载入用例));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -111,6 +112,7 @@ namespace User_Interface_Library
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.propertyGrid1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RS232通讯载入用例";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

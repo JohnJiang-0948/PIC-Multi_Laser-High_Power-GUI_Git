@@ -22,6 +22,7 @@ namespace User_Interface_Library
         xmlHelper xmlHelper = new xmlHelper();
         public RS232配置_CommonData RCD;
         public DataTable Rest_DataTable;
+        public string RS232_XML;
 
         private void 查找用例_Click(object sender, EventArgs e)
         {
@@ -34,6 +35,7 @@ namespace User_Interface_Library
             {
                 string xml_Path = RS232_XML_Folder + "\\" + listBox1.SelectedItem.ToString();
                 xmlHelper.Get_UsbXml(xml_Path, dataGridView1, propertyGrid1);
+
             }
             else
             {
@@ -48,11 +50,14 @@ namespace User_Interface_Library
                 RCD = (RS232配置_CommonData)propertyGrid1.SelectedObject;
                 Rest_DataTable = xmlHelper.tableData;
                 MessageBox.Show("Successfully to load the xml File Content.Please check and try again.");
+                RS232_XML = listBox1.SelectedItem.ToString();
             }
             catch
             {
                 MessageBox.Show("Failed to load the xml File Content.Please check and try again.");
+                RS232_XML = "";
             }
+            this.Close();
         }
 
         private void 查找用例_Click_1(object sender, EventArgs e)

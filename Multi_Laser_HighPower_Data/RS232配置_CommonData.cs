@@ -52,5 +52,21 @@ namespace Multi_Laser_HighPower_Data
         [Category("Common Data")]
         [XmlElement("读取激光器通道")]
         public string LaserChannel_Read { get; set; }
+
+        [Category("Common Data")]
+        [XmlElement("读取激光器FW版本号")]
+        public string LaserFWVersion_Read { get; set; }
+
+        [Category("Common Data")]
+        [XmlElement("读取激光器Model号")]
+        public string LaserModel_Read { get; set; }
+
+        [Category("Common Data")]
+        [XmlElement("读取激光器PN号")]
+        public string LaserPN_Read { get; set; }
+
+        [Category("Common Data")]
+        [XmlElement("读取激光器SN号")]
+        public string LaserSN_Read { get; set; }
     }
 }

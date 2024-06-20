@@ -96,6 +96,8 @@
     <Compile Include="RadForm1.Designer.cs">
       <DependentUpon>RadForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="RS232_Control.cs" />
+    <Compile Include="RS232类库\RS232_Control.cs" />
     <Compile Include="USB类库\USB_BaseClass\USB_BASIC.cs" />
     <Compile Include="USB类库\USB_BaseClass\USB_Control_Info.cs" />
     <Compile Include="USB类库\USB_BaseClass\USB_Control_LS.cs" />
@@ -263,6 +265,7 @@
   <ItemGroup>
     <None Include="Image\激光器控制_USB.jpeg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

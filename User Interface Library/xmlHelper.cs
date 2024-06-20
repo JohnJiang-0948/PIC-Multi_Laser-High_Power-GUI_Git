@@ -152,6 +152,10 @@ namespace User_Interface_Library
                 CD.LaserPower_Read = GridDataNodes[7].InnerText;
                 CD.LaserStatus_Read = GridDataNodes[8].InnerText;
                 CD.LaserChannel_Read= GridDataNodes[9].InnerText;
+                CD.LaserFWVersion_Read= GridDataNodes[10].InnerText;
+                CD.LaserModel_Read= GridDataNodes[11].InnerText;
+                CD.LaserPN_Read= GridDataNodes[12].InnerText;
+                CD.LaserSN_Read= GridDataNodes[13].InnerText;
                 propertyGrid.SelectedObject = CD;
             }
         }
