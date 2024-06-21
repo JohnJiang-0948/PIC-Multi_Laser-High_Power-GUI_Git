@@ -18,8 +18,8 @@ namespace Multi_Laser_HighPower_Data
         public string LaserMode_Read { get; set; }
 
         [Category("Common Data")]
-        [XmlElement("设置激光器模式_指令")]
-        public string LaserMode_Set { get; set; }
+        [XmlElement("设置激光器TTL模式_指令")]
+        public string LaserTTLMode_Set { get; set; }
 
         [Category("Common Data")]
         [XmlElement("设置激光器开启_指令")]
@@ -68,5 +68,9 @@ namespace Multi_Laser_HighPower_Data
         [Category("Common Data")]
         [XmlElement("读取激光器SN号")]
         public string LaserSN_Read { get; set; }
+
+        [Category("Common Data")]
+        [XmlElement("设置激光器FW模式_指令")]
+        public string LaserFWMode_Set { get; set; }
     }
 }

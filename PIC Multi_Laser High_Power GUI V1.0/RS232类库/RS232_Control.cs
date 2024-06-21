@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
 {
     class RS232_Control
     {
             SerialPort Serialport = new SerialPort();
-            #region//RS232基本函数
+
+            #region//RS232通用函数
 
             public void SerialPortSearch(List<string> portList)
             {
@@ -66,7 +68,104 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
                     Application.DoEvents();
                 }
             }
+        #endregion
 
+            #region //RS232功能函数
+        public bool RS232_SetCMD_Process(string Orgin_SetCMD)
+        {
+            bool Judge;
+            if (Orgin_SetCMD.Contains("A "))
+            {
+                Judge = true;
+            }
+            else
+            {
+                Judge = false;
+            }
+            return Judge;
+        }
+
+        public string RS232_GetCMD_Process(string Orgin_GetCMD, string Orgin_Answers)
+        {
+            string Temp_Str;
+            Orgin_GetCMD = Regex.Replace(Orgin_GetCMD, @"[^A-Za-z\s]", "");
+            Temp_Str = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            return Temp_Str;
+        }
+
+        public string RS232_GetInfo_Process(string Orgin_GetCMD, string Orgin_Answers)
+        {
+            string Temp_Answers;
+            Temp_Answers = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            return Temp_Answers;
+        }
+
+        public bool Set_Main_Param(string COM, string Orgin_GetCMD)
+        {
+            bool Judge;
+            string Temp = SerialPortWrite(COM, Orgin_GetCMD);
+            if (Temp.Contains("A "))
+            {
+                Judge = true;
+            }
+            else
+            {
+                Judge = false;
+            }
+            return Judge;
+        }
+
+        public string Get_Main_Process(string COM, string Orgin_GetCMD, string Orgin_Answers)
+        {
+            string str_Temp = "";
+            string result;
+            int secondSpaceIndex = Orgin_GetCMD.IndexOf(' ', Orgin_GetCMD.IndexOf(' ') + 1);
+            if (secondSpaceIndex != -1)
+            {
+                str_Temp = Orgin_GetCMD.Substring(0, secondSpaceIndex);
+            }
+            str_Temp = str_Temp.Replace("GET", "A");
+            if (Orgin_Answers.Contains(str_Temp))
+            {
+                result = Orgin_Answers.Replace(str_Temp, "");
+            }
+            else
+            {
+                result = "";
+            }
+            return result;
+        }
+
+        public bool Get_Main_Param(string COM, string str_Cmd, out string str_Result)
+        {
+            bool Judge;
+            string Orgin_Answer;
+            str_Result = "";
+            try
+            {
+                Orgin_Answer = SerialPortWrite(COM, str_Cmd);
+                str_Result = Get_Main_Process(COM, str_Cmd, Orgin_Answer);
+                if (str_Result == "")
+                {
+                    Judge = false;
+                }
+                else
+                {
+                    Judge = true;
+
+                }
+            }
+            catch
+            {
+                Judge = false;
+            }
+            return Judge;
+        }
+
+        #endregion
     }
-    #endregion
+
+
+
+
 }

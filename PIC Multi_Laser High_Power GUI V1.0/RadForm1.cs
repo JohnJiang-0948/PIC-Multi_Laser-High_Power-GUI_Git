@@ -23,11 +23,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             InitializeComponent();
             登录_Init();
             tabcontrolHide(Main_tabControl);
-            tabcontrolHide(Tab_USB配置);
+            tabcontrolHide(Tab_USB配置);     //USB初始化
+
             RS232_Open = false;
             Connect_OK(true);
             RS232_SerialPort.Items.Clear();
             RS232_DeviceSearch();
+            Channel = 0;                     //RS232初始化
+
+
         }
         //类库初始化
         USB类库.USB_BASIC USB_BASIC = new USB类库.USB_BASIC();
@@ -402,8 +406,11 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             Rest_DataTable = UIL_RS232载入.Rest_DataTable;
             主界面_Configure.Text = UIL_RS232载入.RS232_XML;
             串口协议_Configure.Text= UIL_RS232载入.RS232_XML;
-            RSCL.SerialPortClose();
-            Device_Connect_Refresh();
+            if(RCD!=null)
+            {
+                RSCL.SerialPortClose();
+                Device_Connect_Refresh();
+            }
         }
 
         private void Apply_Configuration_Click(object sender, EventArgs e)
@@ -508,11 +515,13 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         #region//界面—RS232控制
 
         RS232类库.RS232_Control RSCL = new RS232类库.RS232_Control();
+        //RS232类库.RS232_Function RSF = new RS232类库.RS232_Function();
         List<string> Device_List = new List<string>();
         public bool RS232_Open;
         public RS232配置_CommonData RCD;
         public DataTable Rest_DataTable;
         public List<string> WaveList;
+        public int Channel;
 
         public void RS232_DeviceSearch()
         {
@@ -753,10 +762,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 try
                 {
-                    Info_FW.Text = RS232_GetInfo_Process(RCD.LaserFWVersion_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserFWVersion_Read+"\r\n"));
-                    Info_Model.Text= RS232_GetInfo_Process(RCD.LaserModel_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserModel_Read + "\r\n"));
-                    Info_PN.Text= RS232_GetInfo_Process(RCD.LaserPN_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserPN_Read + "\r\n"));
-                    Info_SN.Text = RS232_GetInfo_Process(RCD.LaserSN_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserSN_Read + "\r\n"));
+                    Info_FW.Text = RSCL.RS232_GetInfo_Process(RCD.LaserFWVersion_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserFWVersion_Read+"\r\n"));
+                    Info_Model.Text= RSCL.RS232_GetInfo_Process(RCD.LaserModel_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserModel_Read + "\r\n"));
+                    Info_PN.Text= RSCL.RS232_GetInfo_Process(RCD.LaserPN_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserPN_Read + "\r\n"));
+                    Info_SN.Text = RSCL.RS232_GetInfo_Process(RCD.LaserSN_Read, RSCL.SerialPortWrite(RS232_SerialPort.Text, RCD.LaserSN_Read + "\r\n"));
                 }
                 catch
                 {
@@ -776,38 +785,85 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             }
         }
 
-        #endregion
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
 
-        #region//RS232指令解析
+        }
 
-        public bool RS232_SetCMD_Process(string Orgin_SetCMD)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            channel_Label_Setting1.Text = "CH" + e.RowIndex.ToString();
+            channel_Label_Setting2.Text = "CH" + e.RowIndex.ToString();
+            Channel = e.RowIndex;
+        }
+
+        private void RS232_Mode_Click(object sender, EventArgs e)
         {
             bool Judge;
-            if (Orgin_SetCMD.Contains("A "))
+            if(RS232_Mode.Active==true)
             {
-                Judge = true;
+                Judge=RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserTTLMode_Set.Replace("*", Channel.ToString())+"\r\n");
+                if(Judge==true)
+                {
+                    MessageBox.Show("Failed to set the Laser TTL Mode");
+                }
             }
             else
             {
-                Judge = false;
+                Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserFWMode_Set.Replace("*", Channel.ToString())+"\r\n");
+                if (Judge == true)
+                {
+                    MessageBox.Show("Failed to set the Laser TTL Mode");
+                }
             }
-            return Judge;
         }
 
-        public string RS232_GetCMD_Process(string Orgin_GetCMD, string Orgin_Answers)
+        private void RS232_ONOFF_Button_Click(object sender, EventArgs e)
         {
-            string Temp_Str;
-            Orgin_GetCMD = Regex.Replace(Orgin_GetCMD, @"[^A-Za-z\s]", "");
-            Temp_Str = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
-            return Temp_Str;
+            bool Judge;
+            if ((RS232_Open == true) & (RCD != null))
+            {
+                if(RS232_ONOFF_Button.Text=="OFF")
+                {
+                    try
+                    {
+                        Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserON_Set.Replace("*", Channel.ToString()) + "\r\n");
+                        if (Judge == true)
+                        {
+                            RS232_ONOFF_Button.Text = "ON";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to set the Laser ON.");
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to set the Laser ON.");
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserOff_Set.Replace("*", Channel.ToString()) + "\r\n");
+                        if (Judge == true)
+                        {
+                            RS232_ONOFF_Button.Text = "OFF";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to set the Laser OFF.");
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to set the Laser OFF.");
+                    }
+                }
+            }
         }
 
-        public string RS232_GetInfo_Process(string Orgin_GetCMD, string Orgin_Answers)
-        {
-            string Temp_Answers;
-            Temp_Answers = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
-            return Temp_Answers;
-        }
 
         #endregion
 

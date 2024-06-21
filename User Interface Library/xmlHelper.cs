@@ -143,7 +143,7 @@ namespace User_Interface_Library
             if (GridDataNodes.Count > 0)
             {
                 CD.LaserMode_Read = GridDataNodes[0].InnerText;
-                CD.LaserMode_Set = GridDataNodes[1].InnerText;
+                CD.LaserTTLMode_Set= GridDataNodes[1].InnerText;
                 CD.LaserON_Set= GridDataNodes[2].InnerText;
                 CD.LaserOff_Set = GridDataNodes[3].InnerText;
                 CD.LaserOnOff_Read= GridDataNodes[4].InnerText;
@@ -156,6 +156,7 @@ namespace User_Interface_Library
                 CD.LaserModel_Read= GridDataNodes[11].InnerText;
                 CD.LaserPN_Read= GridDataNodes[12].InnerText;
                 CD.LaserSN_Read= GridDataNodes[13].InnerText;
+                CD.LaserFWMode_Set= GridDataNodes[14].InnerText;
                 propertyGrid.SelectedObject = CD;
             }
         }

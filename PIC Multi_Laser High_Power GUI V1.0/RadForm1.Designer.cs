@@ -34,6 +34,11 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radLabelElement4 = new Telerik.WinControls.UI.RadLabelElement();
             this.radLabelElement5 = new Telerik.WinControls.UI.RadLabelElement();
             this.radLabelElement6 = new Telerik.WinControls.UI.RadLabelElement();
+            this.主界面 = new Telerik.WinControls.UI.RadButtonElement();
+            this.USB配置界面 = new Telerik.WinControls.UI.RadButtonElement();
+            this.USB控制界面 = new Telerik.WinControls.UI.RadButtonElement();
+            this.串口协议界面 = new Telerik.WinControls.UI.RadButtonElement();
+            this.退出界面 = new Telerik.WinControls.UI.RadButtonElement();
             this.radStatusStrip1 = new Telerik.WinControls.UI.RadStatusStrip();
             this.radLabelElement2 = new Telerik.WinControls.UI.RadLabelElement();
             this.网络模式显示 = new Telerik.WinControls.UI.RadLabelElement();
@@ -44,6 +49,26 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Main_tabControl = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Info_SN = new System.Windows.Forms.Label();
+            this.Info_PN = new System.Windows.Forms.Label();
+            this.Info_Model = new System.Windows.Forms.Label();
+            this.Info_FW = new System.Windows.Forms.Label();
+            this.uiLabel4 = new Sunny.UI.UILabel();
+            this.uiLabel3 = new Sunny.UI.UILabel();
+            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.uiLine2 = new Sunny.UI.UILine();
+            this.RS232_Mode = new Sunny.UI.UISwitch();
+            this.channel_Label_Setting1 = new System.Windows.Forms.Label();
+            this.RS232_ONOFF_Button = new Sunny.UI.UIButton();
+            this.label17 = new System.Windows.Forms.Label();
+            this.RS232_Power_Read = new System.Windows.Forms.TextBox();
+            this.RS232_Power_Button = new Sunny.UI.UIButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.RS232_Power_Set = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.主界面_Configure = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Tab_USB配置 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -53,6 +78,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Next_Page1 = new System.Windows.Forms.PictureBox();
+            this.Apply_Configuration = new System.Windows.Forms.PictureBox();
+            this.Write_Info = new System.Windows.Forms.PictureBox();
+            this.Read_Info = new System.Windows.Forms.PictureBox();
             this.Next_Page = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +98,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Previous_Page = new System.Windows.Forms.PictureBox();
+            this.Write_Laser = new System.Windows.Forms.PictureBox();
+            this.Read_Laser = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -83,7 +115,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.LaserFault_Value = new System.Windows.Forms.ToolStripStatusLabel();
             this.ONOFF_Button = new Sunny.UI.UIButton();
-            this.Channel_Label = new System.Windows.Forms.Label();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox_Power = new System.Windows.Forms.TextBox();
@@ -92,31 +123,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label10 = new System.Windows.Forms.Label();
             this.Read_Current_Big = new System.Windows.Forms.TextBox();
             this.Read_Power_Big = new System.Windows.Forms.TextBox();
-            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
-            this.uiLine1 = new Sunny.UI.UILine();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.RS232_SerialPort = new System.Windows.Forms.ComboBox();
-            this.Device_Connect = new Sunny.UI.UIButton();
-            this.Device_Close = new Sunny.UI.UIButton();
-            this.Device_Status = new System.Windows.Forms.Label();
-            this.Refresh = new Sunny.UI.UIButton();
-            this.Next_Page1 = new System.Windows.Forms.PictureBox();
-            this.Apply_Configuration = new System.Windows.Forms.PictureBox();
-            this.Write_Info = new System.Windows.Forms.PictureBox();
-            this.Read_Info = new System.Windows.Forms.PictureBox();
-            this.Previous_Page = new System.Windows.Forms.PictureBox();
-            this.Write_Laser = new System.Windows.Forms.PictureBox();
-            this.Read_Laser = new System.Windows.Forms.PictureBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
             this.串口协议_Configure = new System.Windows.Forms.Label();
-            this.channel_Label_Setting = new System.Windows.Forms.Label();
+            this.channel_Label_Setting2 = new System.Windows.Forms.Label();
             this.RS232_ClearText_Button = new Sunny.UI.UIButton();
             this.RS232_Command_Button = new Sunny.UI.UIButton();
             this.Power = new System.Windows.Forms.TextBox();
             this.Command_List = new System.Windows.Forms.ComboBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.管理员登录 = new Telerik.WinControls.UI.RadMenuItem();
             this.管理员界面登录 = new Telerik.WinControls.UI.RadMenuItem();
             this.密码修改 = new Telerik.WinControls.UI.RadMenuItem();
@@ -139,36 +155,20 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.语言切换 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
             this.帮助 = new Telerik.WinControls.UI.RadMenuItem();
-            this.主界面 = new Telerik.WinControls.UI.RadButtonElement();
-            this.USB配置界面 = new Telerik.WinControls.UI.RadButtonElement();
-            this.USB控制界面 = new Telerik.WinControls.UI.RadButtonElement();
-            this.串口协议界面 = new Telerik.WinControls.UI.RadButtonElement();
-            this.退出界面 = new Telerik.WinControls.UI.RadButtonElement();
+            this.uiLine1 = new Sunny.UI.UILine();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Refresh = new Sunny.UI.UIButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.RS232_SerialPort = new System.Windows.Forms.ComboBox();
+            this.Device_Connect = new Sunny.UI.UIButton();
+            this.Device_Close = new Sunny.UI.UIButton();
+            this.Device_Status = new System.Windows.Forms.Label();
             this.radLabelElement1 = new Telerik.WinControls.UI.RadLabelElement();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label14 = new System.Windows.Forms.Label();
-            this.主界面_Configure = new System.Windows.Forms.Label();
-            this.uiButton2 = new Sunny.UI.UIButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.uiButton3 = new Sunny.UI.UIButton();
-            this.label19 = new System.Windows.Forms.Label();
-            this.uiSwitch1 = new Sunny.UI.UISwitch();
-            this.uiLine2 = new Sunny.UI.UILine();
-            this.Info_SN = new System.Windows.Forms.Label();
-            this.Info_PN = new System.Windows.Forms.Label();
-            this.Info_Model = new System.Windows.Forms.Label();
-            this.Info_FW = new System.Windows.Forms.Label();
-            this.uiLabel4 = new Sunny.UI.UILabel();
-            this.uiLabel3 = new Sunny.UI.UILabel();
-            this.uiLabel2 = new Sunny.UI.UILabel();
-            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuButtonItem11)).BeginInit();
@@ -178,22 +178,22 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage4.SuspendLayout();
             this.Tab_USB配置.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Next_Page)).BeginInit();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Channel)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
-            this.radMenu1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Next_Page1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apply_Configuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Info)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Read_Info)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Next_Page)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Channel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Previous_Page)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Laser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Read_Laser)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            this.radMenu1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -252,6 +252,41 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radLabelElement6.Text = "                          ";
             this.radLabelElement6.TextWrap = true;
             this.radLabelElement6.UseCompatibleTextRendering = false;
+            // 
+            // 主界面
+            // 
+            this.主界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._067_home1;
+            this.主界面.Name = "主界面";
+            this.radStatusStrip2.SetSpring(this.主界面, false);
+            this.主界面.Text = "              主  界面  ";
+            // 
+            // USB配置界面
+            // 
+            this.USB配置界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._062_settings1;
+            this.USB配置界面.Name = "USB配置界面";
+            this.radStatusStrip2.SetSpring(this.USB配置界面, false);
+            this.USB配置界面.Text = "                    USB配置界面          ";
+            // 
+            // USB控制界面
+            // 
+            this.USB控制界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._063_control;
+            this.USB控制界面.Name = "USB控制界面";
+            this.radStatusStrip2.SetSpring(this.USB控制界面, false);
+            this.USB控制界面.Text = "          USB控制界面";
+            // 
+            // 串口协议界面
+            // 
+            this.串口协议界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._014_screen;
+            this.串口协议界面.Name = "串口协议界面";
+            this.radStatusStrip2.SetSpring(this.串口协议界面, false);
+            this.串口协议界面.Text = "                串口协议界面       ";
+            // 
+            // 退出界面
+            // 
+            this.退出界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._068_cancel;
+            this.退出界面.Name = "退出界面";
+            this.radStatusStrip2.SetSpring(this.退出界面, false);
+            this.退出界面.Text = "                        退   出              ";
             // 
             // radStatusStrip1
             // 
@@ -353,10 +388,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Main_tabControl.Controls.Add(this.tabPage4);
             this.Main_tabControl.Controls.Add(this.tabPage5);
             this.Main_tabControl.Controls.Add(this.tabPage8);
-            this.Main_tabControl.Location = new System.Drawing.Point(351, 37);
+            this.Main_tabControl.Location = new System.Drawing.Point(389, 37);
             this.Main_tabControl.Name = "Main_tabControl";
             this.Main_tabControl.SelectedIndex = 0;
-            this.Main_tabControl.Size = new System.Drawing.Size(737, 587);
+            this.Main_tabControl.Size = new System.Drawing.Size(699, 587);
             this.Main_tabControl.TabIndex = 7;
             // 
             // tabPage3
@@ -370,24 +405,245 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage3.Controls.Add(this.uiLabel2);
             this.tabPage3.Controls.Add(this.uiLabel1);
             this.tabPage3.Controls.Add(this.uiLine2);
-            this.tabPage3.Controls.Add(this.uiSwitch1);
-            this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.uiButton3);
+            this.tabPage3.Controls.Add(this.RS232_Mode);
+            this.tabPage3.Controls.Add(this.channel_Label_Setting1);
+            this.tabPage3.Controls.Add(this.RS232_ONOFF_Button);
             this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.uiButton2);
+            this.tabPage3.Controls.Add(this.RS232_Power_Read);
+            this.tabPage3.Controls.Add(this.RS232_Power_Button);
             this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.RS232_Power_Set);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.主界面_Configure);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(729, 561);
+            this.tabPage3.Size = new System.Drawing.Size(691, 561);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "主界面";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // Info_SN
+            // 
+            this.Info_SN.AutoSize = true;
+            this.Info_SN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info_SN.ForeColor = System.Drawing.Color.Black;
+            this.Info_SN.Location = new System.Drawing.Point(150, 124);
+            this.Info_SN.Name = "Info_SN";
+            this.Info_SN.Size = new System.Drawing.Size(0, 19);
+            this.Info_SN.TabIndex = 124;
+            // 
+            // Info_PN
+            // 
+            this.Info_PN.AutoSize = true;
+            this.Info_PN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info_PN.ForeColor = System.Drawing.Color.Black;
+            this.Info_PN.Location = new System.Drawing.Point(150, 90);
+            this.Info_PN.Name = "Info_PN";
+            this.Info_PN.Size = new System.Drawing.Size(0, 19);
+            this.Info_PN.TabIndex = 123;
+            // 
+            // Info_Model
+            // 
+            this.Info_Model.AutoSize = true;
+            this.Info_Model.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info_Model.ForeColor = System.Drawing.Color.Black;
+            this.Info_Model.Location = new System.Drawing.Point(151, 58);
+            this.Info_Model.Name = "Info_Model";
+            this.Info_Model.Size = new System.Drawing.Size(0, 19);
+            this.Info_Model.TabIndex = 122;
+            // 
+            // Info_FW
+            // 
+            this.Info_FW.AutoSize = true;
+            this.Info_FW.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info_FW.ForeColor = System.Drawing.Color.Black;
+            this.Info_FW.Location = new System.Drawing.Point(151, 24);
+            this.Info_FW.Name = "Info_FW";
+            this.Info_FW.Size = new System.Drawing.Size(0, 19);
+            this.Info_FW.TabIndex = 121;
+            // 
+            // uiLabel4
+            // 
+            this.uiLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel4.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel4.Location = new System.Drawing.Point(45, 120);
+            this.uiLabel4.Name = "uiLabel4";
+            this.uiLabel4.Size = new System.Drawing.Size(109, 23);
+            this.uiLabel4.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel4.TabIndex = 116;
+            this.uiLabel4.Text = "Serial Number:";
+            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel3
+            // 
+            this.uiLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel3.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel3.Location = new System.Drawing.Point(45, 86);
+            this.uiLabel3.Name = "uiLabel3";
+            this.uiLabel3.Size = new System.Drawing.Size(114, 23);
+            this.uiLabel3.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel3.TabIndex = 117;
+            this.uiLabel3.Text = "Part Number:";
+            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel2
+            // 
+            this.uiLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel2.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel2.Location = new System.Drawing.Point(45, 53);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(63, 23);
+            this.uiLabel2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel2.TabIndex = 118;
+            this.uiLabel2.Text = "Model:";
+            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.Black;
+            this.uiLabel1.Location = new System.Drawing.Point(45, 20);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(100, 23);
+            this.uiLabel1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLabel1.TabIndex = 119;
+            this.uiLabel1.Text = "FW Version:";
+            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // uiLine2
+            // 
+            this.uiLine2.FillColor = System.Drawing.Color.Transparent;
+            this.uiLine2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLine2.LineColor = System.Drawing.Color.Black;
+            this.uiLine2.LineSize = 2;
+            this.uiLine2.Location = new System.Drawing.Point(1, 143);
+            this.uiLine2.MinimumSize = new System.Drawing.Size(2, 2);
+            this.uiLine2.Name = "uiLine2";
+            this.uiLine2.Size = new System.Drawing.Size(725, 29);
+            this.uiLine2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLine2.TabIndex = 69;
+            // 
+            // RS232_Mode
+            // 
+            this.RS232_Mode.ActiveText = "CW Mode";
+            this.RS232_Mode.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.RS232_Mode.InActiveText = "TTL Mode";
+            this.RS232_Mode.Location = new System.Drawing.Point(36, 195);
+            this.RS232_Mode.MinimumSize = new System.Drawing.Size(1, 1);
+            this.RS232_Mode.Name = "RS232_Mode";
+            this.RS232_Mode.Size = new System.Drawing.Size(162, 41);
+            this.RS232_Mode.TabIndex = 68;
+            this.RS232_Mode.Text = "uiSwitch1";
+            this.RS232_Mode.Click += new System.EventHandler(this.RS232_Mode_Click);
+            // 
+            // channel_Label_Setting1
+            // 
+            this.channel_Label_Setting1.AutoSize = true;
+            this.channel_Label_Setting1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.channel_Label_Setting1.ForeColor = System.Drawing.Color.Red;
+            this.channel_Label_Setting1.Location = new System.Drawing.Point(377, 71);
+            this.channel_Label_Setting1.Name = "channel_Label_Setting1";
+            this.channel_Label_Setting1.Size = new System.Drawing.Size(79, 36);
+            this.channel_Label_Setting1.TabIndex = 67;
+            this.channel_Label_Setting1.Text = "CH0";
+            // 
+            // RS232_ONOFF_Button
+            // 
+            this.RS232_ONOFF_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RS232_ONOFF_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.RS232_ONOFF_Button.Location = new System.Drawing.Point(406, 363);
+            this.RS232_ONOFF_Button.MinimumSize = new System.Drawing.Size(1, 1);
+            this.RS232_ONOFF_Button.Name = "RS232_ONOFF_Button";
+            this.RS232_ONOFF_Button.Size = new System.Drawing.Size(131, 43);
+            this.RS232_ONOFF_Button.TabIndex = 65;
+            this.RS232_ONOFF_Button.Text = "OFF";
+            this.RS232_ONOFF_Button.Click += new System.EventHandler(this.RS232_ONOFF_Button_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(38, 276);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(155, 21);
+            this.label17.TabIndex = 64;
+            this.label17.Text = "Actual Power(mW)";
+            // 
+            // RS232_Power_Read
+            // 
+            this.RS232_Power_Read.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.RS232_Power_Read.Font = new System.Drawing.Font("Times New Roman", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RS232_Power_Read.Location = new System.Drawing.Point(40, 310);
+            this.RS232_Power_Read.Multiline = true;
+            this.RS232_Power_Read.Name = "RS232_Power_Read";
+            this.RS232_Power_Read.Size = new System.Drawing.Size(240, 96);
+            this.RS232_Power_Read.TabIndex = 63;
+            this.RS232_Power_Read.Text = "2.3";
+            // 
+            // RS232_Power_Button
+            // 
+            this.RS232_Power_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RS232_Power_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.RS232_Power_Button.Location = new System.Drawing.Point(407, 464);
+            this.RS232_Power_Button.MinimumSize = new System.Drawing.Size(1, 1);
+            this.RS232_Power_Button.Name = "RS232_Power_Button";
+            this.RS232_Power_Button.Size = new System.Drawing.Size(131, 43);
+            this.RS232_Power_Button.TabIndex = 62;
+            this.RS232_Power_Button.Text = "Set";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(244, 475);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 19);
+            this.label13.TabIndex = 61;
+            this.label13.Text = "mW";
+            // 
+            // RS232_Power_Set
+            // 
+            this.RS232_Power_Set.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RS232_Power_Set.Location = new System.Drawing.Point(160, 469);
+            this.RS232_Power_Set.Multiline = true;
+            this.RS232_Power_Set.Name = "RS232_Power_Set";
+            this.RS232_Power_Set.Size = new System.Drawing.Size(78, 29);
+            this.RS232_Power_Set.TabIndex = 60;
+            this.RS232_Power_Set.Text = "2.3";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(63, 475);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 21);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "Power Set";
+            // 
+            // 主界面_Configure
+            // 
+            this.主界面_Configure.AutoSize = true;
+            this.主界面_Configure.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.主界面_Configure.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.主界面_Configure.Location = new System.Drawing.Point(517, 25);
+            this.主界面_Configure.Name = "主界面_Configure";
+            this.主界面_Configure.Size = new System.Drawing.Size(0, 23);
+            this.主界面_Configure.TabIndex = 24;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.label14.Location = new System.Drawing.Point(378, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(133, 22);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Configure File:";
             // 
             // tabPage4
             // 
@@ -395,7 +651,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(729, 561);
+            this.tabPage4.Size = new System.Drawing.Size(691, 561);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "USB配置界面";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -407,7 +663,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Tab_USB配置.Location = new System.Drawing.Point(0, 3);
             this.Tab_USB配置.Name = "Tab_USB配置";
             this.Tab_USB配置.SelectedIndex = 0;
-            this.Tab_USB配置.Size = new System.Drawing.Size(735, 561);
+            this.Tab_USB配置.Size = new System.Drawing.Size(691, 561);
             this.Tab_USB配置.TabIndex = 0;
             // 
             // tabPage6
@@ -426,9 +682,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(727, 535);
+            this.tabPage6.Size = new System.Drawing.Size(683, 535);
             this.tabPage6.TabIndex = 0;
-            this.tabPage6.Text = "                       Laser Information                    ";
+            this.tabPage6.Text = "                Laser Information                    ";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // label11
@@ -488,6 +744,44 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label1.TabIndex = 6;
             this.label1.Text = "Read Info";
             // 
+            // Next_Page1
+            // 
+            this.Next_Page1.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._054_arrow_right2;
+            this.Next_Page1.Location = new System.Drawing.Point(312, 6);
+            this.Next_Page1.Name = "Next_Page1";
+            this.Next_Page1.Size = new System.Drawing.Size(50, 50);
+            this.Next_Page1.TabIndex = 5;
+            this.Next_Page1.TabStop = false;
+            this.Next_Page1.Click += new System.EventHandler(this.Next_Page1_Click);
+            // 
+            // Apply_Configuration
+            // 
+            this.Apply_Configuration.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._053_paste;
+            this.Apply_Configuration.Location = new System.Drawing.Point(208, 6);
+            this.Apply_Configuration.Name = "Apply_Configuration";
+            this.Apply_Configuration.Size = new System.Drawing.Size(50, 50);
+            this.Apply_Configuration.TabIndex = 5;
+            this.Apply_Configuration.TabStop = false;
+            this.Apply_Configuration.Click += new System.EventHandler(this.Apply_Configuration_Click);
+            // 
+            // Write_Info
+            // 
+            this.Write_Info.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._003_download;
+            this.Write_Info.Location = new System.Drawing.Point(110, 6);
+            this.Write_Info.Name = "Write_Info";
+            this.Write_Info.Size = new System.Drawing.Size(50, 50);
+            this.Write_Info.TabIndex = 5;
+            this.Write_Info.TabStop = false;
+            // 
+            // Read_Info
+            // 
+            this.Read_Info.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._002_upload;
+            this.Read_Info.Location = new System.Drawing.Point(16, 6);
+            this.Read_Info.Name = "Read_Info";
+            this.Read_Info.Size = new System.Drawing.Size(50, 50);
+            this.Read_Info.TabIndex = 5;
+            this.Read_Info.TabStop = false;
+            // 
             // Next_Page
             // 
             this.Next_Page.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -539,9 +833,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(727, 535);
+            this.tabPage7.Size = new System.Drawing.Size(683, 535);
             this.tabPage7.TabIndex = 1;
-            this.tabPage7.Text = "                     Channel Information              ";
+            this.tabPage7.Text = "               Channel Information              ";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -636,11 +930,38 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 150;
             // 
+            // Previous_Page
+            // 
+            this.Previous_Page.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._057_arrow_left;
+            this.Previous_Page.Location = new System.Drawing.Point(645, 12);
+            this.Previous_Page.Name = "Previous_Page";
+            this.Previous_Page.Size = new System.Drawing.Size(50, 50);
+            this.Previous_Page.TabIndex = 152;
+            this.Previous_Page.TabStop = false;
+            this.Previous_Page.Click += new System.EventHandler(this.Previous_Page_Click);
+            // 
+            // Write_Laser
+            // 
+            this.Write_Laser.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._003_download;
+            this.Write_Laser.Location = new System.Drawing.Point(552, 12);
+            this.Write_Laser.Name = "Write_Laser";
+            this.Write_Laser.Size = new System.Drawing.Size(50, 50);
+            this.Write_Laser.TabIndex = 152;
+            this.Write_Laser.TabStop = false;
+            // 
+            // Read_Laser
+            // 
+            this.Read_Laser.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._002_upload;
+            this.Read_Laser.Location = new System.Drawing.Point(458, 12);
+            this.Read_Laser.Name = "Read_Laser";
+            this.Read_Laser.Size = new System.Drawing.Size(50, 50);
+            this.Read_Laser.TabIndex = 153;
+            this.Read_Laser.TabStop = false;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.statusStrip1);
             this.tabPage5.Controls.Add(this.ONOFF_Button);
-            this.tabPage5.Controls.Add(this.Channel_Label);
             this.tabPage5.Controls.Add(this.uiButton1);
             this.tabPage5.Controls.Add(this.label18);
             this.tabPage5.Controls.Add(this.textBox_Power);
@@ -651,7 +972,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage5.Controls.Add(this.Read_Power_Big);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(729, 561);
+            this.tabPage5.Size = new System.Drawing.Size(691, 561);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "USB控制界面";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -674,7 +995,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.LaserFault_Value});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(729, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(691, 22);
             this.statusStrip1.TabIndex = 61;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -741,36 +1062,25 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // LaserFault_Value
             // 
             this.LaserFault_Value.Name = "LaserFault_Value";
-            this.LaserFault_Value.Size = new System.Drawing.Size(64, 17);
+            this.LaserFault_Value.Size = new System.Drawing.Size(64, 16);
             this.LaserFault_Value.Text = "00000000";
             // 
             // ONOFF_Button
             // 
             this.ONOFF_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ONOFF_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.ONOFF_Button.Location = new System.Drawing.Point(576, 216);
+            this.ONOFF_Button.Location = new System.Drawing.Point(499, 216);
             this.ONOFF_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.ONOFF_Button.Name = "ONOFF_Button";
             this.ONOFF_Button.Size = new System.Drawing.Size(131, 43);
             this.ONOFF_Button.TabIndex = 59;
             this.ONOFF_Button.Text = "OFF";
             // 
-            // Channel_Label
-            // 
-            this.Channel_Label.AutoSize = true;
-            this.Channel_Label.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Channel_Label.ForeColor = System.Drawing.Color.Red;
-            this.Channel_Label.Location = new System.Drawing.Point(606, 60);
-            this.Channel_Label.Name = "Channel_Label";
-            this.Channel_Label.Size = new System.Drawing.Size(87, 40);
-            this.Channel_Label.TabIndex = 57;
-            this.Channel_Label.Text = "CH1";
-            // 
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton1.Location = new System.Drawing.Point(576, 329);
+            this.uiButton1.Location = new System.Drawing.Point(498, 310);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(131, 43);
@@ -781,7 +1091,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(484, 348);
+            this.label18.Location = new System.Drawing.Point(426, 330);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(35, 19);
             this.label18.TabIndex = 56;
@@ -790,7 +1100,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // textBox_Power
             // 
             this.textBox_Power.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Power.Location = new System.Drawing.Point(400, 342);
+            this.textBox_Power.Location = new System.Drawing.Point(342, 324);
             this.textBox_Power.Multiline = true;
             this.textBox_Power.Name = "textBox_Power";
             this.textBox_Power.Size = new System.Drawing.Size(78, 29);
@@ -801,7 +1111,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(297, 136);
+            this.label16.Location = new System.Drawing.Point(257, 136);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(105, 21);
             this.label16.TabIndex = 52;
@@ -811,7 +1121,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(303, 348);
+            this.label26.Location = new System.Drawing.Point(245, 330);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(87, 21);
             this.label26.TabIndex = 53;
@@ -831,10 +1141,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.Read_Current_Big.BackColor = System.Drawing.Color.PaleTurquoise;
             this.Read_Current_Big.Font = new System.Drawing.Font("Times New Roman", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Read_Current_Big.Location = new System.Drawing.Point(298, 163);
+            this.Read_Current_Big.Location = new System.Drawing.Point(250, 163);
             this.Read_Current_Big.Multiline = true;
             this.Read_Current_Big.Name = "Read_Current_Big";
-            this.Read_Current_Big.Size = new System.Drawing.Size(251, 96);
+            this.Read_Current_Big.Size = new System.Drawing.Size(221, 96);
             this.Read_Current_Big.TabIndex = 50;
             this.Read_Current_Big.Text = "4.6";
             // 
@@ -845,190 +1155,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Read_Power_Big.Location = new System.Drawing.Point(10, 163);
             this.Read_Power_Big.Multiline = true;
             this.Read_Power_Big.Name = "Read_Power_Big";
-            this.Read_Power_Big.Size = new System.Drawing.Size(240, 96);
+            this.Read_Power_Big.Size = new System.Drawing.Size(208, 96);
             this.Read_Power_Big.TabIndex = 51;
             this.Read_Power_Big.Text = "2.3";
-            // 
-            // radMenu1
-            // 
-            this.radMenu1.AutoSize = false;
-            this.radMenu1.Controls.Add(this.tabControl1);
-            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.管理员登录,
-            this.radMenuItem14,
-            this.radMenuItem2,
-            this.RS232配置用例,
-            this.radMenuItem3,
-            this.radMenuItem4,
-            this.radMenuItem5});
-            this.radMenu1.Location = new System.Drawing.Point(0, 0);
-            this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(1091, 35);
-            this.radMenu1.TabIndex = 4;
-            // 
-            // uiLine1
-            // 
-            this.uiLine1.FillColor = System.Drawing.Color.White;
-            this.uiLine1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLine1.LineColor = System.Drawing.Color.Black;
-            this.uiLine1.LineSize = 2;
-            this.uiLine1.Location = new System.Drawing.Point(351, 626);
-            this.uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
-            this.uiLine1.Name = "uiLine1";
-            this.uiLine1.Size = new System.Drawing.Size(724, 10);
-            this.uiLine1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLine1.TabIndex = 66;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.Refresh);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.RS232_SerialPort);
-            this.panel1.Controls.Add(this.Device_Connect);
-            this.panel1.Controls.Add(this.Device_Close);
-            this.panel1.Controls.Add(this.Device_Status);
-            this.panel1.Location = new System.Drawing.Point(355, 630);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 45);
-            this.panel1.TabIndex = 65;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 16);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "SerialPort:";
-            // 
-            // RS232_SerialPort
-            // 
-            this.RS232_SerialPort.FormattingEnabled = true;
-            this.RS232_SerialPort.Location = new System.Drawing.Point(74, 14);
-            this.RS232_SerialPort.Name = "RS232_SerialPort";
-            this.RS232_SerialPort.Size = new System.Drawing.Size(89, 20);
-            this.RS232_SerialPort.TabIndex = 65;
-            // 
-            // Device_Connect
-            // 
-            this.Device_Connect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Device_Connect.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Device_Connect.Location = new System.Drawing.Point(469, 8);
-            this.Device_Connect.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Device_Connect.Name = "Device_Connect";
-            this.Device_Connect.Size = new System.Drawing.Size(119, 30);
-            this.Device_Connect.TabIndex = 63;
-            this.Device_Connect.Text = "Connect";
-            this.Device_Connect.Click += new System.EventHandler(this.Device_Connect_Click);
-            // 
-            // Device_Close
-            // 
-            this.Device_Close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Device_Close.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Device_Close.Location = new System.Drawing.Point(613, 8);
-            this.Device_Close.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Device_Close.Name = "Device_Close";
-            this.Device_Close.Size = new System.Drawing.Size(111, 30);
-            this.Device_Close.TabIndex = 62;
-            this.Device_Close.Text = "Close";
-            this.Device_Close.Click += new System.EventHandler(this.Device_Close_Click);
-            // 
-            // Device_Status
-            // 
-            this.Device_Status.AutoSize = true;
-            this.Device_Status.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Device_Status.ForeColor = System.Drawing.Color.Red;
-            this.Device_Status.Location = new System.Drawing.Point(258, 14);
-            this.Device_Status.Name = "Device_Status";
-            this.Device_Status.Size = new System.Drawing.Size(194, 19);
-            this.Device_Status.TabIndex = 64;
-            this.Device_Status.Text = "-----No Connection to Device";
-            // 
-            // Refresh
-            // 
-            this.Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Refresh.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Refresh.Location = new System.Drawing.Point(171, 12);
-            this.Refresh.MinimumSize = new System.Drawing.Size(1, 1);
-            this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(81, 25);
-            this.Refresh.TabIndex = 62;
-            this.Refresh.Text = "Refresh";
-            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
-            // 
-            // Next_Page1
-            // 
-            this.Next_Page1.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._054_arrow_right2;
-            this.Next_Page1.Location = new System.Drawing.Point(312, 6);
-            this.Next_Page1.Name = "Next_Page1";
-            this.Next_Page1.Size = new System.Drawing.Size(50, 50);
-            this.Next_Page1.TabIndex = 5;
-            this.Next_Page1.TabStop = false;
-            this.Next_Page1.Click += new System.EventHandler(this.Next_Page1_Click);
-            // 
-            // Apply_Configuration
-            // 
-            this.Apply_Configuration.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._053_paste;
-            this.Apply_Configuration.Location = new System.Drawing.Point(208, 6);
-            this.Apply_Configuration.Name = "Apply_Configuration";
-            this.Apply_Configuration.Size = new System.Drawing.Size(50, 50);
-            this.Apply_Configuration.TabIndex = 5;
-            this.Apply_Configuration.TabStop = false;
-            this.Apply_Configuration.Click += new System.EventHandler(this.Apply_Configuration_Click);
-            // 
-            // Write_Info
-            // 
-            this.Write_Info.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._003_download;
-            this.Write_Info.Location = new System.Drawing.Point(110, 6);
-            this.Write_Info.Name = "Write_Info";
-            this.Write_Info.Size = new System.Drawing.Size(50, 50);
-            this.Write_Info.TabIndex = 5;
-            this.Write_Info.TabStop = false;
-            // 
-            // Read_Info
-            // 
-            this.Read_Info.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._002_upload;
-            this.Read_Info.Location = new System.Drawing.Point(16, 6);
-            this.Read_Info.Name = "Read_Info";
-            this.Read_Info.Size = new System.Drawing.Size(50, 50);
-            this.Read_Info.TabIndex = 5;
-            this.Read_Info.TabStop = false;
-            // 
-            // Previous_Page
-            // 
-            this.Previous_Page.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._057_arrow_left;
-            this.Previous_Page.Location = new System.Drawing.Point(645, 12);
-            this.Previous_Page.Name = "Previous_Page";
-            this.Previous_Page.Size = new System.Drawing.Size(50, 50);
-            this.Previous_Page.TabIndex = 152;
-            this.Previous_Page.TabStop = false;
-            this.Previous_Page.Click += new System.EventHandler(this.Previous_Page_Click);
-            // 
-            // Write_Laser
-            // 
-            this.Write_Laser.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._003_download;
-            this.Write_Laser.Location = new System.Drawing.Point(552, 12);
-            this.Write_Laser.Name = "Write_Laser";
-            this.Write_Laser.Size = new System.Drawing.Size(50, 50);
-            this.Write_Laser.TabIndex = 152;
-            this.Write_Laser.TabStop = false;
-            // 
-            // Read_Laser
-            // 
-            this.Read_Laser.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._002_upload;
-            this.Read_Laser.Location = new System.Drawing.Point(458, 12);
-            this.Read_Laser.Name = "Read_Laser";
-            this.Read_Laser.Size = new System.Drawing.Size(50, 50);
-            this.Read_Laser.TabIndex = 153;
-            this.Read_Laser.TabStop = false;
             // 
             // tabPage8
             // 
             this.tabPage8.BackgroundImage = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB;
             this.tabPage8.Controls.Add(this.label12);
             this.tabPage8.Controls.Add(this.串口协议_Configure);
-            this.tabPage8.Controls.Add(this.channel_Label_Setting);
+            this.tabPage8.Controls.Add(this.channel_Label_Setting2);
             this.tabPage8.Controls.Add(this.RS232_ClearText_Button);
             this.tabPage8.Controls.Add(this.RS232_Command_Button);
             this.tabPage8.Controls.Add(this.Power);
@@ -1036,7 +1172,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage8.Controls.Add(this.richTextBox3);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(729, 561);
+            this.tabPage8.Size = new System.Drawing.Size(691, 561);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "串口协议界面";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1063,26 +1199,26 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.串口协议_Configure.Size = new System.Drawing.Size(0, 23);
             this.串口协议_Configure.TabIndex = 23;
             // 
-            // channel_Label_Setting
+            // channel_Label_Setting2
             // 
-            this.channel_Label_Setting.AutoSize = true;
-            this.channel_Label_Setting.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.channel_Label_Setting.ForeColor = System.Drawing.Color.Red;
-            this.channel_Label_Setting.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB1;
-            this.channel_Label_Setting.Location = new System.Drawing.Point(4, 72);
-            this.channel_Label_Setting.Name = "channel_Label_Setting";
-            this.channel_Label_Setting.Size = new System.Drawing.Size(74, 32);
-            this.channel_Label_Setting.TabIndex = 22;
-            this.channel_Label_Setting.Text = "CH1";
+            this.channel_Label_Setting2.AutoSize = true;
+            this.channel_Label_Setting2.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.channel_Label_Setting2.ForeColor = System.Drawing.Color.Red;
+            this.channel_Label_Setting2.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB1;
+            this.channel_Label_Setting2.Location = new System.Drawing.Point(4, 72);
+            this.channel_Label_Setting2.Name = "channel_Label_Setting2";
+            this.channel_Label_Setting2.Size = new System.Drawing.Size(74, 32);
+            this.channel_Label_Setting2.TabIndex = 22;
+            this.channel_Label_Setting2.Text = "CH1";
             // 
             // RS232_ClearText_Button
             // 
             this.RS232_ClearText_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RS232_ClearText_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.RS232_ClearText_Button.Location = new System.Drawing.Point(192, 259);
+            this.RS232_ClearText_Button.Location = new System.Drawing.Point(175, 259);
             this.RS232_ClearText_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_ClearText_Button.Name = "RS232_ClearText_Button";
-            this.RS232_ClearText_Button.Size = new System.Drawing.Size(117, 35);
+            this.RS232_ClearText_Button.Size = new System.Drawing.Size(102, 35);
             this.RS232_ClearText_Button.TabIndex = 20;
             this.RS232_ClearText_Button.Text = "Clear Text";
             // 
@@ -1093,13 +1229,13 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.RS232_Command_Button.Location = new System.Drawing.Point(10, 259);
             this.RS232_Command_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_Command_Button.Name = "RS232_Command_Button";
-            this.RS232_Command_Button.Size = new System.Drawing.Size(130, 35);
+            this.RS232_Command_Button.Size = new System.Drawing.Size(119, 35);
             this.RS232_Command_Button.TabIndex = 21;
             this.RS232_Command_Button.Text = "Command";
             // 
             // Power
             // 
-            this.Power.Location = new System.Drawing.Point(237, 177);
+            this.Power.Location = new System.Drawing.Point(205, 178);
             this.Power.Multiline = true;
             this.Power.Name = "Power";
             this.Power.Size = new System.Drawing.Size(72, 27);
@@ -1111,16 +1247,33 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Command_List.FormattingEnabled = true;
             this.Command_List.Location = new System.Drawing.Point(10, 177);
             this.Command_List.Name = "Command_List";
-            this.Command_List.Size = new System.Drawing.Size(221, 27);
+            this.Command_List.Size = new System.Drawing.Size(165, 27);
             this.Command_List.TabIndex = 18;
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(333, 174);
+            this.richTextBox3.Location = new System.Drawing.Point(294, 174);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(389, 356);
+            this.richTextBox3.Size = new System.Drawing.Size(388, 356);
             this.richTextBox3.TabIndex = 17;
             this.richTextBox3.Text = "";
+            // 
+            // radMenu1
+            // 
+            this.radMenu1.AutoSize = false;
+            this.radMenu1.Controls.Add(this.tabControl1);
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.管理员登录,
+            this.radMenuItem14,
+            this.radMenuItem2,
+            this.RS232配置用例,
+            this.radMenuItem3,
+            this.radMenuItem4,
+            this.radMenuItem5});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(1091, 35);
+            this.radMenu1.TabIndex = 4;
             // 
             // 管理员登录
             // 
@@ -1291,40 +1444,96 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.帮助.Name = "帮助";
             this.帮助.Text = "帮助";
             // 
-            // 主界面
+            // uiLine1
             // 
-            this.主界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._067_home1;
-            this.主界面.Name = "主界面";
-            this.radStatusStrip2.SetSpring(this.主界面, false);
-            this.主界面.Text = "              主  界面  ";
+            this.uiLine1.FillColor = System.Drawing.Color.White;
+            this.uiLine1.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.uiLine1.LineColor = System.Drawing.Color.Black;
+            this.uiLine1.LineSize = 2;
+            this.uiLine1.Location = new System.Drawing.Point(392, 626);
+            this.uiLine1.MinimumSize = new System.Drawing.Size(2, 2);
+            this.uiLine1.Name = "uiLine1";
+            this.uiLine1.Size = new System.Drawing.Size(683, 10);
+            this.uiLine1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiLine1.TabIndex = 66;
             // 
-            // USB配置界面
+            // panel1
             // 
-            this.USB配置界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._062_settings1;
-            this.USB配置界面.Name = "USB配置界面";
-            this.radStatusStrip2.SetSpring(this.USB配置界面, false);
-            this.USB配置界面.Text = "                    USB配置界面          ";
+            this.panel1.Controls.Add(this.Refresh);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.RS232_SerialPort);
+            this.panel1.Controls.Add(this.Device_Connect);
+            this.panel1.Controls.Add(this.Device_Close);
+            this.panel1.Controls.Add(this.Device_Status);
+            this.panel1.Location = new System.Drawing.Point(393, 630);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(698, 45);
+            this.panel1.TabIndex = 65;
             // 
-            // USB控制界面
+            // Refresh
             // 
-            this.USB控制界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._063_control;
-            this.USB控制界面.Name = "USB控制界面";
-            this.radStatusStrip2.SetSpring(this.USB控制界面, false);
-            this.USB控制界面.Text = "          USB控制界面";
+            this.Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Refresh.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Refresh.Location = new System.Drawing.Point(182, 12);
+            this.Refresh.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(81, 25);
+            this.Refresh.TabIndex = 62;
+            this.Refresh.Text = "Refresh";
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
-            // 串口协议界面
+            // label8
             // 
-            this.串口协议界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._014_screen;
-            this.串口协议界面.Name = "串口协议界面";
-            this.radStatusStrip2.SetSpring(this.串口协议界面, false);
-            this.串口协议界面.Text = "                串口协议界面       ";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(17, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 16);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "SerialPort:";
             // 
-            // 退出界面
+            // RS232_SerialPort
             // 
-            this.退出界面.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources._068_cancel;
-            this.退出界面.Name = "退出界面";
-            this.radStatusStrip2.SetSpring(this.退出界面, false);
-            this.退出界面.Text = "                        退   出              ";
+            this.RS232_SerialPort.FormattingEnabled = true;
+            this.RS232_SerialPort.Location = new System.Drawing.Point(86, 14);
+            this.RS232_SerialPort.Name = "RS232_SerialPort";
+            this.RS232_SerialPort.Size = new System.Drawing.Size(89, 20);
+            this.RS232_SerialPort.TabIndex = 65;
+            // 
+            // Device_Connect
+            // 
+            this.Device_Connect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Device_Connect.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Device_Connect.Location = new System.Drawing.Point(475, 9);
+            this.Device_Connect.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Device_Connect.Name = "Device_Connect";
+            this.Device_Connect.Size = new System.Drawing.Size(90, 30);
+            this.Device_Connect.TabIndex = 63;
+            this.Device_Connect.Text = "Connect";
+            this.Device_Connect.Click += new System.EventHandler(this.Device_Connect_Click);
+            // 
+            // Device_Close
+            // 
+            this.Device_Close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Device_Close.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Device_Close.Location = new System.Drawing.Point(602, 8);
+            this.Device_Close.MinimumSize = new System.Drawing.Size(1, 1);
+            this.Device_Close.Name = "Device_Close";
+            this.Device_Close.Size = new System.Drawing.Size(86, 30);
+            this.Device_Close.TabIndex = 62;
+            this.Device_Close.Text = "Close";
+            this.Device_Close.Click += new System.EventHandler(this.Device_Close_Click);
+            // 
+            // Device_Status
+            // 
+            this.Device_Status.AutoSize = true;
+            this.Device_Status.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Device_Status.ForeColor = System.Drawing.Color.Red;
+            this.Device_Status.Location = new System.Drawing.Point(269, 16);
+            this.Device_Status.Name = "Device_Status";
+            this.Device_Status.Size = new System.Drawing.Size(194, 19);
+            this.Device_Status.TabIndex = 64;
+            this.Device_Status.Text = "-----No Connection to Device";
             // 
             // radLabelElement1
             // 
@@ -1340,18 +1549,20 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column1});
             this.dataGridView1.Location = new System.Drawing.Point(0, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(349, 638);
+            this.dataGridView1.Size = new System.Drawing.Size(387, 638);
             this.dataGridView1.TabIndex = 67;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Laser Status";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 115;
+            this.Column5.Width = 95;
             // 
             // Column6
             // 
@@ -1363,221 +1574,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.Column7.HeaderText = "Wavelength(nm)";
             this.Column7.Name = "Column7";
-            this.Column7.Width = 120;
+            this.Column7.Width = 80;
             // 
-            // label14
+            // Column1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label14.Location = new System.Drawing.Point(427, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 22);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Configure File:";
-            // 
-            // 主界面_Configure
-            // 
-            this.主界面_Configure.AutoSize = true;
-            this.主界面_Configure.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.主界面_Configure.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.主界面_Configure.Location = new System.Drawing.Point(566, 25);
-            this.主界面_Configure.Name = "主界面_Configure";
-            this.主界面_Configure.Size = new System.Drawing.Size(0, 23);
-            this.主界面_Configure.TabIndex = 24;
-            // 
-            // uiButton2
-            // 
-            this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton2.Location = new System.Drawing.Point(435, 470);
-            this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(131, 43);
-            this.uiButton2.TabIndex = 62;
-            this.uiButton2.Text = "Set";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(244, 490);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 19);
-            this.label13.TabIndex = 61;
-            this.label13.Text = "mW";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(160, 484);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(78, 29);
-            this.textBox1.TabIndex = 60;
-            this.textBox1.Text = "2.3";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(63, 490);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 21);
-            this.label15.TabIndex = 59;
-            this.label15.Text = "Power Set";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(38, 291);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(155, 21);
-            this.label17.TabIndex = 64;
-            this.label17.Text = "Actual Power(mW)";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(40, 325);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 96);
-            this.textBox2.TabIndex = 63;
-            this.textBox2.Text = "2.3";
-            // 
-            // uiButton3
-            // 
-            this.uiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton3.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiButton3.Location = new System.Drawing.Point(435, 378);
-            this.uiButton3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton3.Name = "uiButton3";
-            this.uiButton3.Size = new System.Drawing.Size(131, 43);
-            this.uiButton3.TabIndex = 65;
-            this.uiButton3.Text = "OFF";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(426, 71);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(79, 36);
-            this.label19.TabIndex = 67;
-            this.label19.Text = "CH0";
-            // 
-            // uiSwitch1
-            // 
-            this.uiSwitch1.ActiveText = "FW Mode";
-            this.uiSwitch1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiSwitch1.InActiveText = "TTL Mode";
-            this.uiSwitch1.Location = new System.Drawing.Point(42, 213);
-            this.uiSwitch1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiSwitch1.Name = "uiSwitch1";
-            this.uiSwitch1.Size = new System.Drawing.Size(162, 41);
-            this.uiSwitch1.TabIndex = 68;
-            this.uiSwitch1.Text = "uiSwitch1";
-            // 
-            // uiLine2
-            // 
-            this.uiLine2.FillColor = System.Drawing.Color.Transparent;
-            this.uiLine2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.uiLine2.LineColor = System.Drawing.Color.Black;
-            this.uiLine2.LineSize = 2;
-            this.uiLine2.Location = new System.Drawing.Point(1, 143);
-            this.uiLine2.MinimumSize = new System.Drawing.Size(2, 2);
-            this.uiLine2.Name = "uiLine2";
-            this.uiLine2.Size = new System.Drawing.Size(725, 29);
-            this.uiLine2.Style = Sunny.UI.UIStyle.Custom;
-            this.uiLine2.TabIndex = 69;
-            // 
-            // Info_SN
-            // 
-            this.Info_SN.AutoSize = true;
-            this.Info_SN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info_SN.ForeColor = System.Drawing.Color.Black;
-            this.Info_SN.Location = new System.Drawing.Point(150, 124);
-            this.Info_SN.Name = "Info_SN";
-            this.Info_SN.Size = new System.Drawing.Size(0, 19);
-            this.Info_SN.TabIndex = 124;
-            // 
-            // Info_PN
-            // 
-            this.Info_PN.AutoSize = true;
-            this.Info_PN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info_PN.ForeColor = System.Drawing.Color.Black;
-            this.Info_PN.Location = new System.Drawing.Point(150, 90);
-            this.Info_PN.Name = "Info_PN";
-            this.Info_PN.Size = new System.Drawing.Size(0, 19);
-            this.Info_PN.TabIndex = 123;
-            // 
-            // Info_Model
-            // 
-            this.Info_Model.AutoSize = true;
-            this.Info_Model.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info_Model.ForeColor = System.Drawing.Color.Black;
-            this.Info_Model.Location = new System.Drawing.Point(151, 58);
-            this.Info_Model.Name = "Info_Model";
-            this.Info_Model.Size = new System.Drawing.Size(0, 19);
-            this.Info_Model.TabIndex = 122;
-            // 
-            // Info_FW
-            // 
-            this.Info_FW.AutoSize = true;
-            this.Info_FW.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info_FW.ForeColor = System.Drawing.Color.Black;
-            this.Info_FW.Location = new System.Drawing.Point(151, 24);
-            this.Info_FW.Name = "Info_FW";
-            this.Info_FW.Size = new System.Drawing.Size(0, 19);
-            this.Info_FW.TabIndex = 121;
-            // 
-            // uiLabel4
-            // 
-            this.uiLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel4.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel4.Location = new System.Drawing.Point(45, 120);
-            this.uiLabel4.Name = "uiLabel4";
-            this.uiLabel4.Size = new System.Drawing.Size(109, 23);
-            this.uiLabel4.TabIndex = 116;
-            this.uiLabel4.Text = "Serial Number:";
-            this.uiLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel3
-            // 
-            this.uiLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel3.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel3.Location = new System.Drawing.Point(45, 86);
-            this.uiLabel3.Name = "uiLabel3";
-            this.uiLabel3.Size = new System.Drawing.Size(114, 23);
-            this.uiLabel3.TabIndex = 117;
-            this.uiLabel3.Text = "Part Number:";
-            this.uiLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel2
-            // 
-            this.uiLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel2.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel2.Location = new System.Drawing.Point(45, 53);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(63, 23);
-            this.uiLabel2.TabIndex = 118;
-            this.uiLabel2.Text = "Model:";
-            this.uiLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.Black;
-            this.uiLabel1.Location = new System.Drawing.Point(45, 20);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(100, 23);
-            this.uiLabel1.TabIndex = 119;
-            this.uiLabel1.Text = "FW Version:";
-            this.uiLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Column1.HeaderText = "Power(mW)";
+            this.Column1.Name = "Column1";
             // 
             // RadForm1
             // 
@@ -1614,27 +1616,27 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Tab_USB配置.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Next_Page)).EndInit();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Channel)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
-            this.radMenu1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Next_Page1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Apply_Configuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Info)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Read_Info)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Next_Page)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Channel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Previous_Page)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Write_Laser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Read_Laser)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            this.radMenu1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -1685,7 +1687,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.ComboBox comboBox1;
         private Sunny.UI.UIButton ONOFF_Button;
-        private System.Windows.Forms.Label Channel_Label;
         private Sunny.UI.UIButton uiButton1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox_Power;
@@ -1745,7 +1746,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label 串口协议_Configure;
-        private System.Windows.Forms.Label channel_Label_Setting;
+        private System.Windows.Forms.Label channel_Label_Setting2;
         private Sunny.UI.UIButton RS232_ClearText_Button;
         private Sunny.UI.UIButton RS232_Command_Button;
         private System.Windows.Forms.TextBox Power;
@@ -1760,20 +1761,17 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private System.Windows.Forms.Label Device_Status;
         private Sunny.UI.UIButton Refresh;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label 主界面_Configure;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox2;
-        private Sunny.UI.UIButton uiButton2;
+        private System.Windows.Forms.TextBox RS232_Power_Read;
+        private Sunny.UI.UIButton RS232_Power_Button;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox RS232_Power_Set;
         private System.Windows.Forms.Label label15;
-        private Sunny.UI.UIButton uiButton3;
-        private Sunny.UI.UISwitch uiSwitch1;
-        private System.Windows.Forms.Label label19;
+        private Sunny.UI.UIButton RS232_ONOFF_Button;
+        private Sunny.UI.UISwitch RS232_Mode;
+        private System.Windows.Forms.Label channel_Label_Setting1;
         private System.Windows.Forms.Label Info_SN;
         private System.Windows.Forms.Label Info_PN;
         private System.Windows.Forms.Label Info_Model;
@@ -1783,5 +1781,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILine uiLine2;
+        private System.Windows.Forms.DataGridViewImageColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
