@@ -42,7 +42,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
 
             public string SerialPortWrite(string COM, string CMD_Input)                         //串口通信读取
             {
-                Serialport.DiscardInBuffer();
                 string CMD_Output = "";
                 Serialport.Write(CMD_Input);
                 Delay(100);

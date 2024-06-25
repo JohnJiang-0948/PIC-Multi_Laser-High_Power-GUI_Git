@@ -64,7 +64,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.label17 = new System.Windows.Forms.Label();
             this.RS232_Power_Read = new System.Windows.Forms.TextBox();
             this.RS232_Power_Button = new Sunny.UI.UIButton();
-            this.label13 = new System.Windows.Forms.Label();
+            this.Power_Unit = new System.Windows.Forms.Label();
             this.RS232_Power_Set = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.主界面_Configure = new System.Windows.Forms.Label();
@@ -124,6 +124,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Read_Current_Big = new System.Windows.Forms.TextBox();
             this.Read_Power_Big = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.RS232_Command = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.串口协议_Configure = new System.Windows.Forms.Label();
             this.channel_Label_Setting2 = new System.Windows.Forms.Label();
@@ -132,7 +133,6 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Power = new System.Windows.Forms.TextBox();
             this.Command_List = new System.Windows.Forms.ComboBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
             this.管理员登录 = new Telerik.WinControls.UI.RadMenuItem();
             this.管理员界面登录 = new Telerik.WinControls.UI.RadMenuItem();
             this.密码修改 = new Telerik.WinControls.UI.RadMenuItem();
@@ -149,7 +149,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.RS232编辑配置用例 = new Telerik.WinControls.UI.RadMenuItem();
             this.RS232载入配置用例 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
-            this.当日记录 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
             this.历史查询 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.语言切换 = new Telerik.WinControls.UI.RadMenuItem();
@@ -169,6 +169,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.报警信息 = new System.Windows.Forms.RichTextBox();
+            this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.radLabelElement7 = new Telerik.WinControls.UI.RadLabelElement();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radStatusStrip1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenuButtonItem11)).BeginInit();
@@ -191,10 +194,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
-            this.radMenu1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            this.radMenu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -207,9 +210,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.radLabelElement5,
             this.radLabelElement6,
             this.主界面,
+            this.串口协议界面,
             this.USB配置界面,
             this.USB控制界面,
-            this.串口协议界面,
+            this.radLabelElement7,
             this.退出界面});
             this.radStatusStrip2.Location = new System.Drawing.Point(1091, 0);
             this.radStatusStrip2.Name = "radStatusStrip2";
@@ -273,6 +277,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.USB控制界面.Name = "USB控制界面";
             this.radStatusStrip2.SetSpring(this.USB控制界面, false);
             this.USB控制界面.Text = "          USB控制界面";
+            this.USB控制界面.Click += new System.EventHandler(this.USB控制界面_Click);
             // 
             // 串口协议界面
             // 
@@ -287,6 +292,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.退出界面.Name = "退出界面";
             this.radStatusStrip2.SetSpring(this.退出界面, false);
             this.退出界面.Text = "                        退   出              ";
+            this.退出界面.Click += new System.EventHandler(this.退出界面_Click);
             // 
             // radStatusStrip1
             // 
@@ -411,7 +417,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.RS232_Power_Read);
             this.tabPage3.Controls.Add(this.RS232_Power_Button);
-            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.Power_Unit);
             this.tabPage3.Controls.Add(this.RS232_Power_Set);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.主界面_Configure);
@@ -528,9 +534,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             // RS232_Mode
             // 
-            this.RS232_Mode.ActiveText = "CW Mode";
+            this.RS232_Mode.ActiveText = "TTL Mode";
             this.RS232_Mode.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.RS232_Mode.InActiveText = "TTL Mode";
+            this.RS232_Mode.InActiveText = "CW Mode";
             this.RS232_Mode.Location = new System.Drawing.Point(36, 195);
             this.RS232_Mode.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_Mode.Name = "RS232_Mode";
@@ -554,7 +560,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.RS232_ONOFF_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RS232_ONOFF_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.RS232_ONOFF_Button.Location = new System.Drawing.Point(406, 363);
+            this.RS232_ONOFF_Button.Location = new System.Drawing.Point(406, 374);
             this.RS232_ONOFF_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_ONOFF_Button.Name = "RS232_ONOFF_Button";
             this.RS232_ONOFF_Button.Size = new System.Drawing.Size(131, 43);
@@ -587,22 +593,23 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.RS232_Power_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RS232_Power_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.RS232_Power_Button.Location = new System.Drawing.Point(407, 464);
+            this.RS232_Power_Button.Location = new System.Drawing.Point(407, 471);
             this.RS232_Power_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_Power_Button.Name = "RS232_Power_Button";
             this.RS232_Power_Button.Size = new System.Drawing.Size(131, 43);
             this.RS232_Power_Button.TabIndex = 62;
             this.RS232_Power_Button.Text = "Set";
+            this.RS232_Power_Button.Click += new System.EventHandler(this.RS232_Power_Button_Click);
             // 
-            // label13
+            // Power_Unit
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(244, 475);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 19);
-            this.label13.TabIndex = 61;
-            this.label13.Text = "mW";
+            this.Power_Unit.AutoSize = true;
+            this.Power_Unit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Power_Unit.Location = new System.Drawing.Point(244, 475);
+            this.Power_Unit.Name = "Power_Unit";
+            this.Power_Unit.Size = new System.Drawing.Size(25, 19);
+            this.Power_Unit.TabIndex = 61;
+            this.Power_Unit.Text = "‰";
             // 
             // RS232_Power_Set
             // 
@@ -1162,6 +1169,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // tabPage8
             // 
             this.tabPage8.BackgroundImage = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB;
+            this.tabPage8.Controls.Add(this.RS232_Command);
             this.tabPage8.Controls.Add(this.label12);
             this.tabPage8.Controls.Add(this.串口协议_Configure);
             this.tabPage8.Controls.Add(this.channel_Label_Setting2);
@@ -1177,13 +1185,21 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.tabPage8.Text = "串口协议界面";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // RS232_Command
+            // 
+            this.RS232_Command.Location = new System.Drawing.Point(10, 145);
+            this.RS232_Command.Multiline = true;
+            this.RS232_Command.Name = "RS232_Command";
+            this.RS232_Command.Size = new System.Drawing.Size(267, 47);
+            this.RS232_Command.TabIndex = 25;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB1;
-            this.label12.Location = new System.Drawing.Point(338, 72);
+            this.label12.Location = new System.Drawing.Point(338, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(133, 22);
             this.label12.TabIndex = 24;
@@ -1194,7 +1210,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.串口协议_Configure.AutoSize = true;
             this.串口协议_Configure.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.串口协议_Configure.ForeColor = System.Drawing.Color.White;
-            this.串口协议_Configure.Location = new System.Drawing.Point(485, 71);
+            this.串口协议_Configure.Location = new System.Drawing.Point(485, 45);
             this.串口协议_Configure.Name = "串口协议_Configure";
             this.串口协议_Configure.Size = new System.Drawing.Size(0, 23);
             this.串口协议_Configure.TabIndex = 23;
@@ -1205,7 +1221,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.channel_Label_Setting2.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.channel_Label_Setting2.ForeColor = System.Drawing.Color.Red;
             this.channel_Label_Setting2.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.激光器控制_USB1;
-            this.channel_Label_Setting2.Location = new System.Drawing.Point(4, 72);
+            this.channel_Label_Setting2.Location = new System.Drawing.Point(4, 46);
             this.channel_Label_Setting2.Name = "channel_Label_Setting2";
             this.channel_Label_Setting2.Size = new System.Drawing.Size(74, 32);
             this.channel_Label_Setting2.TabIndex = 22;
@@ -1215,27 +1231,29 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.RS232_ClearText_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RS232_ClearText_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.RS232_ClearText_Button.Location = new System.Drawing.Point(175, 259);
+            this.RS232_ClearText_Button.Location = new System.Drawing.Point(175, 303);
             this.RS232_ClearText_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_ClearText_Button.Name = "RS232_ClearText_Button";
             this.RS232_ClearText_Button.Size = new System.Drawing.Size(102, 35);
             this.RS232_ClearText_Button.TabIndex = 20;
             this.RS232_ClearText_Button.Text = "Clear Text";
+            this.RS232_ClearText_Button.Click += new System.EventHandler(this.RS232_ClearText_Button_Click_1);
             // 
             // RS232_Command_Button
             // 
             this.RS232_Command_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RS232_Command_Button.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.RS232_Command_Button.Location = new System.Drawing.Point(10, 259);
+            this.RS232_Command_Button.Location = new System.Drawing.Point(10, 303);
             this.RS232_Command_Button.MinimumSize = new System.Drawing.Size(1, 1);
             this.RS232_Command_Button.Name = "RS232_Command_Button";
             this.RS232_Command_Button.Size = new System.Drawing.Size(119, 35);
             this.RS232_Command_Button.TabIndex = 21;
             this.RS232_Command_Button.Text = "Command";
+            this.RS232_Command_Button.Click += new System.EventHandler(this.RS232_Command_Button_Click_1);
             // 
             // Power
             // 
-            this.Power.Location = new System.Drawing.Point(205, 178);
+            this.Power.Location = new System.Drawing.Point(205, 234);
             this.Power.Multiline = true;
             this.Power.Name = "Power";
             this.Power.Size = new System.Drawing.Size(72, 27);
@@ -1245,35 +1263,18 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.Command_List.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Command_List.FormattingEnabled = true;
-            this.Command_List.Location = new System.Drawing.Point(10, 177);
+            this.Command_List.Location = new System.Drawing.Point(10, 233);
             this.Command_List.Name = "Command_List";
             this.Command_List.Size = new System.Drawing.Size(165, 27);
             this.Command_List.TabIndex = 18;
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(294, 174);
+            this.richTextBox3.Location = new System.Drawing.Point(294, 145);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(388, 356);
+            this.richTextBox3.Size = new System.Drawing.Size(388, 385);
             this.richTextBox3.TabIndex = 17;
             this.richTextBox3.Text = "";
-            // 
-            // radMenu1
-            // 
-            this.radMenu1.AutoSize = false;
-            this.radMenu1.Controls.Add(this.tabControl1);
-            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.管理员登录,
-            this.radMenuItem14,
-            this.radMenuItem2,
-            this.RS232配置用例,
-            this.radMenuItem3,
-            this.radMenuItem4,
-            this.radMenuItem5});
-            this.radMenu1.Location = new System.Drawing.Point(0, 0);
-            this.radMenu1.Name = "radMenu1";
-            this.radMenu1.Size = new System.Drawing.Size(1091, 35);
-            this.radMenu1.TabIndex = 4;
             // 
             // 管理员登录
             // 
@@ -1399,22 +1400,24 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             // 
             this.radMenuItem3.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.date;
             this.radMenuItem3.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.当日记录,
+            this.radMenuItem1,
             this.历史查询});
             this.radMenuItem3.Name = "radMenuItem3";
             this.radMenuItem3.Text = "错误日志";
+            this.radMenuItem3.Click += new System.EventHandler(this.radMenuItem3_Click);
             // 
-            // 当日记录
+            // radMenuItem1
             // 
-            this.当日记录.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.date_error2;
-            this.当日记录.Name = "当日记录";
-            this.当日记录.Text = "当日记录";
+            this.radMenuItem1.Name = "radMenuItem1";
+            this.radMenuItem1.Text = "日志列表清空";
+            this.radMenuItem1.Click += new System.EventHandler(this.radMenuItem1_Click);
             // 
             // 历史查询
             // 
             this.历史查询.Image = global::PIC_Multi_Laser_High_Power_GUI_V1._0.Properties.Resources.date_magnify2;
             this.历史查询.Name = "历史查询";
             this.历史查询.Text = "历史查询";
+            this.历史查询.Click += new System.EventHandler(this.历史查询_Click);
             // 
             // radMenuItem4
             // 
@@ -1554,7 +1557,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.dataGridView1.Location = new System.Drawing.Point(0, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(387, 638);
+            this.dataGridView1.Size = new System.Drawing.Size(387, 490);
             this.dataGridView1.TabIndex = 67;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -1581,12 +1584,47 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.Column1.HeaderText = "Power(mW)";
             this.Column1.Name = "Column1";
             // 
+            // 报警信息
+            // 
+            this.报警信息.Location = new System.Drawing.Point(0, 528);
+            this.报警信息.Name = "报警信息";
+            this.报警信息.Size = new System.Drawing.Size(387, 150);
+            this.报警信息.TabIndex = 68;
+            this.报警信息.Text = "";
+            // 
+            // radMenu1
+            // 
+            this.radMenu1.AutoSize = false;
+            this.radMenu1.Controls.Add(this.tabControl1);
+            this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.管理员登录,
+            this.radMenuItem14,
+            this.radMenuItem2,
+            this.RS232配置用例,
+            this.radMenuItem3,
+            this.radMenuItem4,
+            this.radMenuItem5});
+            this.radMenu1.Location = new System.Drawing.Point(0, 0);
+            this.radMenu1.Name = "radMenu1";
+            this.radMenu1.Size = new System.Drawing.Size(1091, 35);
+            this.radMenu1.TabIndex = 4;
+            // 
+            // radLabelElement7
+            // 
+            this.radLabelElement7.AutoSize = false;
+            this.radLabelElement7.Bounds = new System.Drawing.Rectangle(0, 0, 167, 155);
+            this.radLabelElement7.Name = "radLabelElement7";
+            this.radStatusStrip2.SetSpring(this.radLabelElement7, false);
+            this.radLabelElement7.Text = "";
+            this.radLabelElement7.TextWrap = true;
+            // 
             // RadForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 706);
+            this.Controls.Add(this.报警信息);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.uiLine1);
             this.Controls.Add(this.Main_tabControl);
@@ -1633,11 +1671,11 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             this.statusStrip1.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
-            this.radMenu1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).EndInit();
+            this.radMenu1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1718,11 +1756,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private Telerik.WinControls.UI.RadMenuItem RS232载入配置用例;
         private Telerik.WinControls.UI.RadMenuItem USB通讯新建用例;
         private Telerik.WinControls.UI.RadLabelElement 网络模式显示;
-        private Telerik.WinControls.UI.RadMenu radMenu1;
         private Telerik.WinControls.UI.RadMenuItem 管理员界面登录;
         private Telerik.WinControls.UI.RadMenuItem 密码修改;
         private Telerik.WinControls.UI.RadMenuItem 管理员退出;
-        private Telerik.WinControls.UI.RadMenuItem 当日记录;
         private Telerik.WinControls.UI.RadMenuItem 历史查询;
         private Telerik.WinControls.UI.RadMenuItem 语言切换;
         private Telerik.WinControls.UI.RadMenuItem 帮助;
@@ -1766,7 +1802,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox RS232_Power_Read;
         private Sunny.UI.UIButton RS232_Power_Button;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label Power_Unit;
         private System.Windows.Forms.TextBox RS232_Power_Set;
         private System.Windows.Forms.Label label15;
         private Sunny.UI.UIButton RS232_ONOFF_Button;
@@ -1785,5 +1821,10 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TextBox RS232_Command;
+        private System.Windows.Forms.RichTextBox 报警信息;
+        private Telerik.WinControls.UI.RadMenu radMenu1;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
+        private Telerik.WinControls.UI.RadLabelElement radLabelElement7;
     }
 }
