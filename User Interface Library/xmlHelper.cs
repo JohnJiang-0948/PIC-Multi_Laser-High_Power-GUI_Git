@@ -24,12 +24,19 @@ namespace User_Interface_Library
         public void xmlSearch(string Filefolder,ListBox listBox)
         {
             listBox.Items.Clear();
-            string[] xmlFiles = Directory.GetFiles(Filefolder);
-             string xml_Temp;
-            foreach(string xml in xmlFiles)
+            try
             {
-                xml_Temp=xml.Substring(xml.LastIndexOf("\\")).Replace("\\","");
-                listBox.Items.Add(xml_Temp);
+                string[] xmlFiles = Directory.GetFiles(Filefolder);
+                string xml_Temp;
+                foreach (string xml in xmlFiles)
+                {
+                    xml_Temp = xml.Substring(xml.LastIndexOf("\\")).Replace("\\", "");
+                    listBox.Items.Add(xml_Temp);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("The specified folder does not exist.Please try again.");
             }
         }
 
@@ -148,15 +155,25 @@ namespace User_Interface_Library
                 CD.LaserOff_Set = GridDataNodes[3].InnerText;
                 CD.LaserOnOff_Read= GridDataNodes[4].InnerText;
                 CD.permilleRatio = GridDataNodes[5].InnerText;
-                CD.LaserPower_Set= GridDataNodes[6].InnerText;
-                CD.LaserPower_Read = GridDataNodes[7].InnerText;
-                CD.LaserStatus_Read = GridDataNodes[8].InnerText;
-                CD.LaserChannel_Read= GridDataNodes[9].InnerText;
-                CD.LaserFWVersion_Read= GridDataNodes[10].InnerText;
-                CD.LaserModel_Read= GridDataNodes[11].InnerText;
-                CD.LaserPN_Read= GridDataNodes[12].InnerText;
-                CD.LaserSN_Read= GridDataNodes[13].InnerText;
-                CD.LaserFWMode_Set= GridDataNodes[14].InnerText;
+                CD.LaserPowerPercent_Set= GridDataNodes[6].InnerText;
+                CD.LaserPowerValue_Read = GridDataNodes[7].InnerText;
+                
+                CD.SystemStatus_Read= GridDataNodes[8].InnerText;
+                CD.LaserChannelStatus_Read= GridDataNodes[9].InnerText;
+                CD.LaserChannel_Read= GridDataNodes[10].InnerText;
+                CD.LaserFWVersion_Read= GridDataNodes[11].InnerText;
+                CD.LaserModel_Read= GridDataNodes[12].InnerText;
+                CD.LaserPN_Read= GridDataNodes[13].InnerText;
+                CD.LaserSN_Read= GridDataNodes[14].InnerText;
+                CD.LaserFWMode_Set= GridDataNodes[15].InnerText;
+                CD.LaserBT_Temp_Read= GridDataNodes[16].InnerText;
+                CD.LaserChannelLD_Temp_Read= GridDataNodes[17].InnerText;
+                CD.LaserSystem_Temp_Read= GridDataNodes[18].InnerText;
+                CD.Laser_OnTime_Read= GridDataNodes[19].InnerText;
+                CD.Laser_PowerValue_Set= GridDataNodes[20].InnerText;
+                CD.Allow_PowerValue_Set= GridDataNodes[21].InnerText;
+                CD.Allow_PowerIntensity_Set = GridDataNodes[22].InnerText;
+                CD.PowerSet_Mode_Read= GridDataNodes[23].InnerText;
                 propertyGrid.SelectedObject = CD;
             }
         }

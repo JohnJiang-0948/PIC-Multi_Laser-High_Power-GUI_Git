@@ -93,6 +93,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _014_screen1 {
+            get {
+                object obj = ResourceManager.GetObject("014-screen1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap _053_paste {
             get {
                 object obj = ResourceManager.GetObject("053-paste", resourceCulture);
@@ -316,6 +326,16 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.Properties {
         internal static System.Drawing.Bitmap date_error3 {
             get {
                 object obj = ResourceManager.GetObject("date_error3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap date_error4 {
+            get {
+                object obj = ResourceManager.GetObject("date_error4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

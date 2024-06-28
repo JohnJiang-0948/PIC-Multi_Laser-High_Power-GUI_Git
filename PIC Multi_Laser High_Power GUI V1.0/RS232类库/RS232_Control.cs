@@ -13,7 +13,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
     {
             SerialPort Serialport = new SerialPort();
 
-            #region//RS232通用函数
+        #region//RS232通用函数
 
             public void SerialPortSearch(List<string> portList)
             {
@@ -69,7 +69,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
             }
         #endregion
 
-            #region //RS232功能函数
+        #region //RS232功能函数
+
         public bool RS232_SetCMD_Process(string Orgin_SetCMD)
         {
             bool Judge;
@@ -87,15 +88,36 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
         public string RS232_GetCMD_Process(string Orgin_GetCMD, string Orgin_Answers)
         {
             string Temp_Str;
-            Orgin_GetCMD = Regex.Replace(Orgin_GetCMD, @"[^A-Za-z\s]", "");
-            Temp_Str = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            if (Orgin_GetCMD!="")
+            {
+                Orgin_GetCMD = Regex.Replace(Orgin_GetCMD, @"[^A-Za-z\s]", "");
+                Temp_Str = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            }
+            else
+            {
+                Temp_Str = "";
+            }
             return Temp_Str;
         }
 
         public string RS232_GetInfo_Process(string Orgin_GetCMD, string Orgin_Answers)
         {
             string Temp_Answers;
-            Temp_Answers = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+            if(Orgin_GetCMD!="")
+            {
+                if (Orgin_GetCMD != "")
+                {
+                    Temp_Answers = Orgin_Answers.Replace("A " + Orgin_GetCMD.Replace("GET ", ""), "");
+                }
+                else
+                {
+                    Temp_Answers = "";
+                }
+            }
+            else
+            {
+                Temp_Answers = "";
+            }
             return Temp_Answers;
         }
 
@@ -116,17 +138,24 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
 
         public string Get_Main_Process(string COM, string Orgin_GetCMD, string Orgin_Answers)
         {
-            string str_Temp = "";
             string result;
-            int secondSpaceIndex = Orgin_GetCMD.IndexOf(' ', Orgin_GetCMD.IndexOf(' ') + 1);
-            if (secondSpaceIndex != -1)
+            if (Orgin_GetCMD != "")
             {
-                str_Temp = Orgin_GetCMD.Substring(0, secondSpaceIndex);
-            }
-            str_Temp = str_Temp.Replace("GET", "A");
-            if (Orgin_Answers.Contains(str_Temp))
-            {
-                result = Orgin_Answers.Replace(str_Temp, "");
+                string str_Temp = "";
+                int secondSpaceIndex = Orgin_GetCMD.IndexOf(' ', Orgin_GetCMD.IndexOf(' ') + 1);
+                if (secondSpaceIndex != -1)
+                {
+                    str_Temp = Orgin_GetCMD.Substring(0, secondSpaceIndex);
+                }
+                str_Temp = str_Temp.Replace("GET", "A");
+                if (Orgin_Answers.Contains(str_Temp))
+                {
+                    result = Orgin_Answers.Replace(str_Temp, "");
+                }
+                else
+                {
+                    result = "";
+                }
             }
             else
             {
@@ -140,23 +169,31 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.RS232类库
             bool Judge;
             string Orgin_Answer;
             str_Result = "";
-            try
+            if(str_Cmd!="")
             {
-                Orgin_Answer = SerialPortWrite(COM, str_Cmd);
-                str_Result = Get_Main_Process(COM, str_Cmd, Orgin_Answer);
-                if (str_Result == "")
+                try
+                {
+                    Orgin_Answer = SerialPortWrite(COM, str_Cmd);
+                    str_Result = Get_Main_Process(COM, str_Cmd, Orgin_Answer);
+                    if (str_Result == "")
+                    {
+                        Judge = false;
+                    }
+                    else
+                    {
+                        Judge = true;
+
+                    }
+                }
+                catch
                 {
                     Judge = false;
                 }
-                else
-                {
-                    Judge = true;
-
-                }
             }
-            catch
+           else
             {
-                Judge = false;
+                Judge = true;
+                str_Result = "";
             }
             return Judge;
         }

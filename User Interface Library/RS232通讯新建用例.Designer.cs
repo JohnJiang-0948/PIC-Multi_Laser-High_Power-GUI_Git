@@ -38,6 +38,7 @@ namespace User_Interface_Library
             this.新建用例 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +122,21 @@ namespace User_Interface_Library
             this.label3.TabIndex = 9;
             this.label3.Text = "其他指令集：";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(109, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(149, 12);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "[Channels: *, Values: #]";
+            // 
             // RS232通讯新建用例
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 465);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
@@ -154,5 +165,6 @@ namespace User_Interface_Library
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -74,6 +74,23 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.USB类库
             return Process_Str;
         }
 
+        public string String_Update(string orgin_Str)
+        {
+            string result_Str;
+            char charU0002 = (char)0x0002; // Start of Text  
+            char charU0006 = (char)0x0006; // Acknowledge (ACK) 
+            char charU0004= (char)0x0004;
+            if (orgin_Str.Contains("\u0002")|| orgin_Str.Contains("\u0006") || orgin_Str.Contains("\u0004"))
+            {
+                result_Str = orgin_Str.Replace(charU0002.ToString(), "").Replace(charU0006.ToString(), "").Replace(charU0004.ToString(), "").TrimEnd();
+            }
+            else
+            {
+                result_Str = "";
+            }
+            return result_Str;
+        }
+
         public void Get_Info(DataGridView dataGridView)
         {
             Byte[] buffer = new Byte[30];
@@ -81,44 +98,46 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0.USB类库
             Byte[] bufferAddress2 = new Byte[30];
             string waveList1;
             string waveList2;
+            string str_Temp;
 
             bufferAddress1 = ReadFsram(FieldOffset<INFO>("contact"), 30);
             bufferAddress2 = ReadFsram(FieldOffset<INFO>("contact") + 30, 30);
-            dataGridView.Rows[7].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(bufferAddress1) + System.Text.ASCIIEncoding.ASCII.GetString(bufferAddress2));
+            str_Temp = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(bufferAddress1) + System.Text.ASCIIEncoding.ASCII.GetString(bufferAddress2));
+            dataGridView.Rows[7].Cells[1].Value = String_Update(str_Temp);
 
             buffer = ReadFsram(FieldOffset<INFO>("wave_list"), 30);
             waveList1 = System.Text.ASCIIEncoding.ASCII.GetString(buffer);
             buffer = ReadFsram(FieldOffset<INFO>("wave_list") + 30, 30);
             waveList2 = System.Text.ASCIIEncoding.ASCII.GetString(buffer);
-            dataGridView.Rows[1].Cells[1].Value = Convert_Str(str_Process(waveList1 + waveList2));
+            dataGridView.Rows[1].Cells[1].Value = String_Update(Convert_Str(str_Process(waveList1 + waveList2)));
 
             buffer = ReadFsram(FieldOffset<INFO>("hardware_info"), 30);
-            dataGridView.Rows[2].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[2].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("software_info"), 30);
-            dataGridView.Rows[3].Cells[1].Value = Convert_Str(str_Process(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
+            dataGridView.Rows[3].Cells[1].Value = String_Update(Convert_Str(str_Process(System.Text.ASCIIEncoding.ASCII.GetString(buffer))));
 
             buffer = ReadFsram(FieldOffset<INFO>("serial_number"), 30);
             string Temp = System.Text.ASCIIEncoding.ASCII.GetString(buffer);
-            dataGridView.Rows[4].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[4].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("product_name"), 30);
-            dataGridView.Rows[5].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[5].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("vendor_name"), 30);
-            dataGridView.Rows[6].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[6].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("tel"), 30);
-            dataGridView.Rows[8].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[8].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("model"), 30);
-            dataGridView.Rows[9].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[9].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("mfg_date"), 30);
-            dataGridView.Rows[10].Cells[1].Value = Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer));
+            dataGridView.Rows[10].Cells[1].Value = String_Update(Convert_Str(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));
 
             buffer = ReadFsram(FieldOffset<INFO>("info_rsvd9"), 30);
-            dataGridView.Rows[11].Cells[1].Value = Convert_Str(str_Process(System.Text.ASCIIEncoding.ASCII.GetString(buffer)));        
+            dataGridView.Rows[11].Cells[1].Value = String_Update(Convert_Str(str_Process(System.Text.ASCIIEncoding.ASCII.GetString(buffer))));        
         }
 
         public void Set_Info(DataGridView dataGridView)

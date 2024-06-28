@@ -36,6 +36,7 @@ namespace User_Interface_Library
             this.label1 = new System.Windows.Forms.Label();
             this.查找用例 = new Sunny.UI.UIButton();
             this.载入用例 = new Sunny.UI.UIButton();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,11 +103,21 @@ namespace User_Interface_Library
             this.载入用例.Text = "载入用例";
             this.载入用例.Click += new System.EventHandler(this.载入用例_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(327, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(149, 12);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "[Channels: *, Values: #]";
+            // 
             // RS232通讯载入用例
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 427);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.载入用例);
             this.Controls.Add(this.查找用例);
             this.Controls.Add(this.label1);
@@ -132,5 +143,6 @@ namespace User_Interface_Library
         private System.Windows.Forms.Label label1;
         private Sunny.UI.UIButton 查找用例;
         private Sunny.UI.UIButton 载入用例;
+        private System.Windows.Forms.Label label5;
     }
 }

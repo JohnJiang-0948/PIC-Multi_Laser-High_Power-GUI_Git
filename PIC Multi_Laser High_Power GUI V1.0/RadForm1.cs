@@ -14,6 +14,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.IO;
+using System.Globalization;
+
 
 
 namespace PIC_Multi_Laser_High_Power_GUI_V1._0
@@ -23,11 +25,13 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public RadForm1()
         {
             InitializeComponent();
+            系统语言检测();
             登录_Init();
             Admin_Show(Admin);
             tabcontrolHide(Main_tabControl);
             tabcontrolHide(Tab_USB配置);     //USB初始化
             tabcontrolHide(Main_tabControl);
+            tabcontrolHide(tabControl2);
             RS232_Open = false;
             Connect_OK(true);
             RS232_SerialPort.Items.Clear();
@@ -46,6 +50,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public Multi_Laser_HighPower_Data.USB配置_Data USB配置_Data;
         public string USB_xml_Number;
         public string Main_RS232_Folder;
+        
 
         private void RadForm1_Load(object sender, EventArgs e)
         {
@@ -54,6 +59,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             USB_Event();
             USB_Protocol_Init(); 
             set_External_Net_Mode(); //设置外部单机模式
+            功率百分比_勾选.Checked = true;
+            功率数值_勾选.Checked = false;
         }
 
 
@@ -66,6 +73,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 Application.DoEvents();
             }
         }
+
         public void tabcontrolHide(TabControl tabControl)
         {
             tabControl.Appearance = TabAppearance.FlatButtons;
@@ -81,10 +89,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public bool USB_Connect;
         public int USB_Channel;
 
+
         public void USB_Protocol_Init()
         {
             USB_Connect = false;
-            USB_BASIC.GridviewInit(Next_Page, dataGridView_Channel);
+            USB_BASIC.GridviewInit(LaserInfo_Grid, dataGridView_Channel);
+
         }
 
         public void USB_Event()
@@ -154,21 +164,21 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                     USB类库.USB_BASIC.SetCH((byte)USB_Channel);
                     USB_BASIC.Unseal();
                     Delay(500);
-                    uSB_Control_Info.Get_Info(Next_Page);
-                    uSB_Control_RT.Get_RT(Next_Page);
-                    uSB_Control_LS.Get_LS(Next_Page);
-                    uSB_Control_MyCollect.Get_MyCollect1(Next_Page);
+                    uSB_Control_Info.Get_Info(LaserInfo_Grid);
+                    uSB_Control_RT.Get_RT(LaserInfo_Grid);
+                    uSB_Control_LS.Get_LS(LaserInfo_Grid);
+                    uSB_Control_MyCollect.Get_MyCollect1(LaserInfo_Grid);
                 }
                 catch
                 {
                     MessageBox.Show("Failed get the Laser Info.Please try again.");
-                    Reset_Datagridview(Next_Page);
+                    Reset_Datagridview(LaserInfo_Grid);
                 }
                 USB_Protocol_Close();
             }
             else
             {
-                Reset_Datagridview(Next_Page);
+                Reset_Datagridview(LaserInfo_Grid);
                 MessageBox.Show("Please check the USB Connection and try again.");
                 Log_报警("Please check the USB Connection and try again.");
             }
@@ -184,9 +194,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                     USB类库.USB_BASIC.SetCH((byte)USB_Channel);
                     USB_BASIC.Unseal();
                     Delay(500);
-                    uSB_Control_Info.Set_Info(Next_Page);
-                    uSB_Control_RT.Set_RT(Next_Page);
-                    uSB_Control_LS.Set_LS(Next_Page);
+                    uSB_Control_Info.Set_Info(LaserInfo_Grid);
+                    uSB_Control_RT.Set_RT(LaserInfo_Grid);
+                    uSB_Control_LS.Set_LS(LaserInfo_Grid);
                     MessageBox.Show("Successfully complete the Laser Configuration.");
                     Log_日志("Successfully complete the Laser Configuration.");
                 }
@@ -273,11 +283,22 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             }
             else if (Click_Button.Name.Contains("USB配置界面"))
             {
+                if (RS232_Open == true)
+                {
+                    CTS1.Cancel();
+                    Delay(500);
+                    Task.WaitAll(task);
+                    RS232_DeviceClose();
+                    RS232_Open = false;
+                    RS232_GetALLInfo();
+                    RS232_Mode.Active = false;
+                }
                 Main_tabControl.SelectedIndex = 1;
             }
             else if (Click_Button.Name.Contains("USB控制界面"))
             {
-                Main_tabControl.SelectedIndex = 2;
+                //Main_tabControl.SelectedIndex = 2;
+                MessageBox.Show("This function is not available yet! If you need it, please contact PIC.");
             }
             else if (Click_Button.Name.Contains("串口协议界面"))
             {
@@ -325,6 +346,71 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             Tab_USB配置.SelectedIndex = 0;
         }
 
+        public void USB_Setting_InfoTable_Init(DataGridView dataGridView)
+        {
+            for (int i = 0; i <= 17; i++)
+            {
+                dataGridView.Rows.Add();
+            }
+            dataGridView.Rows[0].Cells[0].Value = "color_map";
+            dataGridView.Rows[1].Cells[0].Value = "wave_list";
+            dataGridView.Rows[2].Cells[0].Value = "hardware_info";
+            dataGridView.Rows[3].Cells[0].Value = "software_info";
+            dataGridView.Rows[4].Cells[0].Value = "serial_number";
+            dataGridView.Rows[5].Cells[0].Value = "product_name";
+            dataGridView.Rows[6].Cells[0].Value = "vendor_name";
+            dataGridView.Rows[7].Cells[0].Value = "contact";
+            dataGridView.Rows[8].Cells[0].Value = "tel";
+            dataGridView.Rows[9].Cells[0].Value = "model";
+            dataGridView.Rows[10].Cells[0].Value = "mfg_date";
+            dataGridView.Rows[11].Cells[0].Value = "info_rsvd9";
+            dataGridView.Rows[12].Cells[0].Value = "crystal_temp_set";
+            dataGridView.Rows[13].Cells[0].Value = "dfb_curr_limit_resistance";
+            dataGridView.Rows[14].Cells[0].Value = "coarse_dfb_scan_interval";
+            dataGridView.Rows[15].Cells[0].Value = "fine_dfb_scan_inerval";
+            dataGridView.Rows[16].Cells[0].Value = "dfb_curr";
+            dataGridView.Rows[17].Cells[0].Value = "soa_curr";
+
+            dataGridView.Rows[0].Cells[2].Value = "channel";
+            dataGridView.Rows[1].Cells[2].Value = "ch_seq";
+            dataGridView.Rows[2].Cells[2].Value = "power_on_time";
+            dataGridView.Rows[3].Cells[2].Value = "power_on_cycles";
+            dataGridView.Rows[4].Cells[2].Value = "over_bt_alarm_max";
+            dataGridView.Rows[5].Cells[2].Value = "over_bt_alarm_min";
+            dataGridView.Rows[6].Cells[2].Value = "sys_bt1_temp_offset";
+            dataGridView.Rows[7].Cells[2].Value = "sys_bt2_temp_offset";
+            dataGridView.Rows[8].Cells[2].Value = "over_dt_alarm_high";
+            dataGridView.Rows[9].Cells[2].Value = "over_dt_alarm_low";
+            dataGridView.Rows[10].Cells[2].Value = "over_at_alarm_high";
+            dataGridView.Rows[11].Cells[2].Value = "over_at_alarm_low";
+            dataGridView.Rows[12].Cells[2].Value = "quit_bt_high";
+            dataGridView.Rows[13].Cells[2].Value = "quit_bt_low";
+            dataGridView.Rows[14].Cells[2].Value = "quit_dt_high";
+            dataGridView.Rows[15].Cells[2].Value = "quit_dt_low";
+            dataGridView.Rows[16].Cells[2].Value = "bt1";
+            dataGridView.Rows[17].Cells[2].Value = "bt2";
+            dataGridView.Rows[18].Cells[2].Value = "ls_stu";
+        }
+
+        public void USB_Setting_InfoTable_Refresh(DataGridView dataGridView)
+        {
+            for (int i = 0; i <= 17; i++)
+            {
+                dataGridView.Rows[i].Cells[1].Value = "";
+                dataGridView.Rows[i].Cells[3].Value = "";
+            }
+        }
+
+        private void LaserInfo_Clear_Click(object sender, EventArgs e)
+        {
+            USB_Setting_InfoTable_Refresh(LaserInfo_Grid);
+        }
+
+        private void LaserChannelGrid_Clear_Click(object sender, EventArgs e)
+        {
+            USB_Setting_InfoTable_Refresh(dataGridView_Channel);
+        }
+
         #endregion
 
 
@@ -340,8 +426,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         public void set_Internal_Net_Mode()
         {
             External_Net_Mode = false;
-            Main_USB_XML_Folder = "S:\\John Jiang\\System_Configuration\\USB_Configuration";
-            Main_RS232_Folder= "S:\\John Jiang\\System_Configuration\\RS232_Configuration";
+            Main_USB_XML_Folder = "10.10.0.6\\MFG_Data\\EE测试数据\\PIC 高功率配置文件夹\\USB_Configuration";
+            Main_RS232_Folder= "10.10.0.6\\MFG_Data\\EE测试数据\\PIC 高功率配置文件夹\\RS232_Configuration";
         }
 
         private void 外部单机模式_Click(object sender, EventArgs e)
@@ -350,7 +436,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 set_External_Net_Mode();
                 External_Net_Mode = true;
-                网络模式显示.Text = "                   ---外部单机模式---                 ";
+                //网络模式显示.Text = "                   ---外部单机模式---                 ";
+                Language_Convert(Lanuage_Chinese);
                 MessageBox.Show("The system has been switched to external Network mode!");
                 Log_日志("The system has been switched to external Network mode!");
             }            
@@ -362,7 +449,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 set_Internal_Net_Mode();
                 External_Net_Mode = false;
-                网络模式显示.Text = "                   ---内部单机模式---                 ";
+                //网络模式显示.Text = "                   ---内部单机模式---                 ";
+                Language_Convert(Lanuage_Chinese);
                 MessageBox.Show("The system has been switched to internal Network mode!");
                 Log_日志("The system has been switched to internal Network mode!");
             }
@@ -412,17 +500,25 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
         private void RS232载入配置用例_Click(object sender, EventArgs e)
         {
-            User_Interface_Library.RS232通讯载入用例 UIL_RS232载入 = new RS232通讯载入用例();
-            UIL_RS232载入.RS232_XML_Folder = Main_RS232_Folder;
-            UIL_RS232载入.ShowDialog();
-            RCD = UIL_RS232载入.RCD;
-            Rest_DataTable = UIL_RS232载入.Rest_DataTable;
-            主界面_Configure.Text = UIL_RS232载入.RS232_XML;
-            串口协议_Configure.Text= UIL_RS232载入.RS232_XML;
-            if((RCD!=null)&(RS232_SerialPort.Text!=""))
+            if(RS232_Open==false)
             {
-                RSCL.SerialPortClose();
-                Device_Connect_Refresh();
+                User_Interface_Library.RS232通讯载入用例 UIL_RS232载入 = new RS232通讯载入用例();
+                UIL_RS232载入.RS232_XML_Folder = Main_RS232_Folder;
+                UIL_RS232载入.ShowDialog();
+                RCD = UIL_RS232载入.RCD;
+                Rest_DataTable = UIL_RS232载入.Rest_DataTable;
+                主界面_Configure.Text = UIL_RS232载入.RS232_XML;
+                串口协议_Configure.Text = UIL_RS232载入.RS232_XML;
+                //if ((RCD != null) & (RS232_SerialPort.Text != ""))
+                //{
+                //    RSCL.SerialPortClose();
+                //    Device_Connect_Refresh();
+                //}
+            }
+            else
+            {
+                MessageBox.Show("Please close the Rs232 connection and then import the  new script.");
+                Log_日志("Please close the Rs232 connection and then import the  new script.");
             }
         }
 
@@ -430,7 +526,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         {
             if(USB_Configuration.Text!="")
             {
-                USB_Configuration_Apply(Next_Page);
+                USB_Configuration_Apply(LaserInfo_Grid);
             }
             else
             {
@@ -496,14 +592,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 Admin_Show(Admin);
                 if(Admin==true)
                 {
-                    管理员显示.Text = "                  管理员模式              ";
+                    //管理员显示.Text = "                  管理员模式              ";
                     管理员显示.ForeColor = Color.Red;
                 }
                 else
                 {
-                    管理员显示.Text = "                  操作员模式              ";
+                    //管理员显示.Text = "                  操作员模式              ";
                     管理员显示.ForeColor = Color.Black;
                 }
+                Language_Convert(Lanuage_Chinese);
             }
         }
 
@@ -519,10 +616,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 Admin = false;
                 MessageBox.Show("Successfully Login Out the Admin Mode.");
-                管理员显示.Text = "                  操作员模式              ";
+                //管理员显示.Text = "                  操作员模式              ";
+                Language_Convert(Lanuage_Chinese);
                 管理员显示.ForeColor = Color.Black;
                 Log_日志("Successfully Login Out the Admin Mode.");
                 Admin_Show(Admin);
+                
             }
         }
 
@@ -605,10 +704,23 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             {
                 MessageBox.Show("Failed to close the device. Please check and set again.");
             }
+            
             RS232_Open = false;
-            Device_Status.Text = "-----No Connection to Device";
-            Device_Status.ForeColor = Color.Red;
-            dataGridView1.Rows.Clear();
+            if(this.InvokeRequired)
+            {
+                Invoke(new Action(() => {
+                    Device_Status.Text = "-----No Connection to Device";
+                    Device_Status.ForeColor = Color.Red;
+                    dataGridView1.Rows.Clear();
+                }));
+
+            }
+            else
+            {
+                Device_Status.Text = "-----No Connection to Device";
+                Device_Status.ForeColor = Color.Red;
+                dataGridView1.Rows.Clear();
+            }
             Connect_OK(true);
         }
 
@@ -700,20 +812,41 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private void Refresh_Click(object sender, EventArgs e)
         {
             RS232_SerialPort.Items.Clear();
-            RS232_DeviceSearch();
+            RS232_DeviceSearch();           
         }
 
         public void Connect_OK(bool Connect_OK)
         {
             if(Connect_OK==true)
             {
-                Device_Connect.Visible = true;
-                Device_Close.Visible = false;
+                if(this.InvokeRequired)
+                {
+                    Invoke(new Action(() => {
+                        Device_Connect.Visible = true;
+                        Device_Close.Visible = false;
+                    }));
+                }
+                else
+                {
+                    Device_Connect.Visible = true;
+                    Device_Close.Visible = false;
+                }
             }
             else
             {
-                Device_Connect.Visible = false;
-                Device_Close.Visible = true;
+                if(this.InvokeRequired)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        Device_Connect.Visible = false;
+                        Device_Close.Visible = true;
+                    }));
+                }
+                else
+                {
+                    Device_Connect.Visible = false;
+                    Device_Close.Visible = true;
+                }
             }
         }
 
@@ -767,7 +900,17 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         #region //RS232初始化及连接
         private void Device_Connect_Click(object sender, EventArgs e)
         {
-            Device_Connect_Refresh();
+            if(CTS1!=null)
+            {
+                CTS1.Cancel();
+                Delay(500);
+                Task.WaitAll(task);
+                Device_Connect_Refresh();
+            }
+            else
+            {
+                Device_Connect_Refresh();
+            }
         }
 
         private void Device_Close_Click(object sender, EventArgs e)
@@ -831,20 +974,46 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 {
                     MessageBox.Show("Failed to get the Laser Information.");
                     Log_报警("Failed to get the Laser Information.");
+                    if(this.InvokeRequired)
+                    {
+                        Invoke(new Action(() => {
+                            Info_FW.Text = "";
+                            Info_Model.Text = "";
+                            Info_PN.Text = "";
+                            Info_SN.Text = "";
+                            Power_Unit.Text = "";
+                        }));
+                    }
+                    else
+                    {
+                        Info_FW.Text = "";
+                        Info_Model.Text = "";
+                        Info_PN.Text = "";
+                        Info_SN.Text = "";
+                        Power_Unit.Text = "";
+                    }
+                }
+            }
+            else
+            {
+                if (this.InvokeRequired)
+                {
+                    Invoke(new Action(() => {
+                        Info_FW.Text = "";
+                        Info_Model.Text = "";
+                        Info_PN.Text = "";
+                        Info_SN.Text = "";
+                        Power_Unit.Text = "";
+                    }));
+                }
+                else
+                {
                     Info_FW.Text = "";
                     Info_Model.Text = "";
                     Info_PN.Text = "";
                     Info_SN.Text = "";
                     Power_Unit.Text = "";
                 }
-            }
-            else
-            {
-                Info_FW.Text = "";
-                Info_Model.Text = "";
-                Info_PN.Text = "";
-                Info_SN.Text = "";
-                Power_Unit.Text = "";
             }
         }
 
@@ -865,6 +1034,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
 
         #region //RS232功能设置
+
         Task task;
         ManualResetEvent MRE = new ManualResetEvent(true);
         CancellationTokenSource CTS1;
@@ -875,6 +1045,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             bool Judge;
             if ((RS232_Open == true) & (RCD != null))
             {
+                CTS1.Cancel();
+                Delay(500);
+                Task.WaitAll(task);
                 if (RS232_Mode.Active == true)
                 {
                     Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserTTLMode_Set + "\r\n");
@@ -893,6 +1066,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                         Log_报警("Failed to set the Laser TTL Mode");
                     }
                 }
+                Task_LaserRead();
             }
         }
 
@@ -946,20 +1120,32 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 {
                     double Power_MaxSet;
                     Power_MaxSet = Convert.ToDouble(RS232_Power_Set.Text);
-                    if (Power_MaxSet<=1000)
+                    if(功率百分比_勾选.Checked==true)
                     {
-                        Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserPower_Set.Replace("*", Channel.ToString()).Replace("#", RS232_Power_Set.Text)+"\r\n");
+                        if (Power_MaxSet <= 1000)
+                        {
+                            Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.LaserPowerPercent_Set.Replace("*", Channel.ToString()).Replace("#", RS232_Power_Set.Text) + "\r\n");
+                            if (Judge == false)
+                            {
+                                MessageBox.Show("Failed to set the Laser Power.");
+                                Log_报警("Failed to set the Laser Power.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please set the correct Power Value.");
+                            Log_报警("Please set the correct Power Value.");
+                        }
+                    }
+                    else
+                    {
+                        Judge = RSCL.Set_Main_Param(RS232_SerialPort.Text, RCD.Laser_PowerValue_Set.Replace("*", Channel.ToString()).Replace("#", RS232_PowerValue_Set.Text) + "\r\n");
                         if (Judge == false)
                         {
                             MessageBox.Show("Failed to set the Laser Power.");
                             Log_报警("Failed to set the Laser Power.");
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please set the correct Power Value.");
-                        Log_报警("Please set the correct Power Value.");
-                    }
+                    }                   
                 }
                 catch
                 {
@@ -1025,7 +1211,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             bool Judge;
             if ((RS232_Open == true) & (RCD != null))
             {
-                Judge = RSCL.Get_Main_Param(COM, RCD.LaserPower_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                Judge = RSCL.Get_Main_Param(COM, RCD.LaserPowerValue_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
                 Result = Orgin_Answer.TrimEnd();
                 Result = Result.TrimStart();
                 if (this.InvokeRequired)
@@ -1043,6 +1229,175 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                 Judge = false;
             }
             return Judge;
+        }
+
+        public void RS232_Get_AllTemp(CancellationToken CT)
+        {
+            string Orgin_Answer;
+            string Temp;
+            if ((RS232_Open == true) & (RCD != null))
+            {
+                try
+                {
+                    if(this.InvokeRequired)
+                    {
+                        if (CT.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        Temp= RSCL.RS232_GetInfo_Process(RCD.LaserBT_Temp_Read, RSCL.SerialPortWrite(COM, RCD.LaserBT_Temp_Read + "\r\n"));
+                        Invoke(new Action(() => {
+                            BT_Value.Text = Temp;
+                        }));
+                        if (CT.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        Temp= RSCL.RS232_GetInfo_Process(RCD.LaserSystem_Temp_Read, RSCL.SerialPortWrite(COM, RCD.LaserSystem_Temp_Read + "\r\n"));
+                        Invoke(new Action(() => {
+                            SystemTemp_Value.Text = Temp;
+                        }));
+                        if (CT.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        RSCL.Get_Main_Param(COM, RCD.LaserChannelLD_Temp_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                        Invoke(new Action(() => {              
+                            LD_Value.Text = Orgin_Answer;
+                        }));
+                    }
+                    else
+                    {
+                        BT_Value.Text = RSCL.RS232_GetInfo_Process(RCD.LaserBT_Temp_Read, RSCL.SerialPortWrite(COM, RCD.LaserBT_Temp_Read + "\r\n"));
+                        SystemTemp_Value.Text = RSCL.RS232_GetInfo_Process(RCD.LaserSystem_Temp_Read, RSCL.SerialPortWrite(COM, RCD.LaserSystem_Temp_Read + "\r\n"));
+                        RSCL.Get_Main_Param(COM, RCD.LaserChannelLD_Temp_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                        LD_Value.Text = Orgin_Answer;
+                    }
+                }
+                catch
+                {
+                    if (this.InvokeRequired)
+                    {
+                        Invoke(new Action(()=>{
+                            BT_Value.Text = "";
+                            SystemTemp_Value.Text = "";
+                            LD_Value.Text = "";
+                        }));
+                    }
+                    else
+                    {
+                        Invoke(new Action(() => {
+                            BT_Value.Text = "";
+                            SystemTemp_Value.Text = "";
+                            LD_Value.Text = "";
+                        }));
+                    }
+                }
+            }
+            else
+            {
+                if (this.InvokeRequired)
+                {
+                    Invoke(new Action(() => {
+                        BT_Value.Text = "";
+                        SystemTemp_Value.Text = "";
+                        LD_Value.Text = "";
+                    }));
+                }
+                else
+                {
+                    Invoke(new Action(() => {
+                        BT_Value.Text = "";
+                        SystemTemp_Value.Text = "";
+                        LD_Value.Text = "";
+                    }));
+                }
+            }
+        }
+
+        public void RS232_Get_AllStatus(CancellationToken CT)
+        {
+            string Orgin_Answer;
+            string Temp;
+            if ((RS232_Open == true) & (RCD != null))
+            {
+                try
+                {
+                    if (this.InvokeRequired)
+                    {
+                        if (CT.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        Temp = RSCL.RS232_GetInfo_Process(RCD.SystemStatus_Read, RSCL.SerialPortWrite(COM, RCD.SystemStatus_Read + "\r\n"));
+                        Invoke(new Action(() => {
+                            System_Status.Text = Temp;
+                        }));
+                        if (CT.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        RSCL.Get_Main_Param(COM, RCD.Laser_OnTime_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                        Invoke(new Action(() => {
+                            Laser_OnTime.Text = Orgin_Answer;
+                        }));
+                        if (CT.IsCancellationRequested)
+                        {
+                            return;
+                        }
+                        RSCL.Get_Main_Param(COM, RCD.LaserChannelStatus_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                        Invoke(new Action(() => {
+                           Laser_Status.Text = Orgin_Answer;
+                        }));
+                    }
+                    else
+                    {
+                        Laser_Status.Text = RSCL.RS232_GetInfo_Process(RCD.SystemStatus_Read, RSCL.SerialPortWrite(COM, RCD.SystemStatus_Read + "\r\n"));
+                        RSCL.Get_Main_Param(COM, RCD.Laser_OnTime_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                        Laser_OnTime.Text = Orgin_Answer;
+                        RSCL.Get_Main_Param(COM, RCD.LaserChannelStatus_Read.Replace("*", Channel.ToString()) + "\r\n", out Orgin_Answer);
+                        System_Status.Text = Orgin_Answer;
+                    }
+                }
+                catch
+                {
+                    if (this.InvokeRequired)
+                    {
+                        Invoke(new Action(() => {
+                            Laser_Status.Text = "";
+                            Laser_OnTime.Text = "";
+                            System_Status.Text = "";
+                        }));
+                    }
+                    else
+                    {
+                        Invoke(new Action(() => {
+                            Laser_Status.Text = "";
+                            Laser_OnTime.Text = "";
+                            System_Status.Text = "";
+                        }));
+                    }
+                }
+            }
+            else
+            {
+                if (this.InvokeRequired)
+                {
+                    Invoke(new Action(() => {
+                        BT_Value.Text = "";
+                        SystemTemp_Value.Text = "";
+                        LD_Value.Text = "";
+                    }));
+                }
+                else
+                {
+                    Invoke(new Action(() => {
+                        BT_Value.Text = "";
+                        SystemTemp_Value.Text = "";
+                        LD_Value.Text = "";
+                    }));
+                }
+            }
         }
 
         public bool RS232_Get_ONOFF()
@@ -1124,7 +1479,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                         }
                     }));
 
-                    RSCL.Get_Main_Param(COM, RCD.LaserPower_Read.Replace("*", i.ToString()) + "\r\n", out Orgin_Answer);
+                    RSCL.Get_Main_Param(COM, RCD.LaserPowerValue_Read.Replace("*", i.ToString()) + "\r\n", out Orgin_Answer);
                     if (CT.IsCancellationRequested)
                     {
                         return;
@@ -1149,21 +1504,71 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             bool Judge1;
             bool Judge2;
             bool Judge3;
+            List<string> portList=new List<string>();
             string Orgin_Answer="";
+            string Temp;
             task = Task.Run(() =>
              {
              while (true)
              {
-                    Datagridview1_ReadPower_ONOFF(CT1);
-                    if (CT1.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    Judge2 = RS232_Get_TTLMode();
-                    if (CT1.IsCancellationRequested)
-                    {
-                        return;
-                    }
+                     if (CT1.IsCancellationRequested)
+                     {
+                         return;
+                     }
+                     RSCL.SerialPortSearch(portList);
+                     if (CT1.IsCancellationRequested)
+                     {
+                         return;
+                     }
+                     if (portList.Contains(COM)==true)
+                     {
+                         if (CT1.IsCancellationRequested)
+                         {
+                             return;
+                         }
+                         Datagridview1_ReadPower_ONOFF(CT1);
+                         if (CT1.IsCancellationRequested)
+                         {
+                             return;
+                         }
+                         RS232_Get_AllTemp(CT1);
+                         if (CT1.IsCancellationRequested)
+                         {
+                             return;
+                         }
+                         RS232_Get_AllStatus(CT1);
+                         if (CT1.IsCancellationRequested)
+                         {
+                             return;
+                         }
+                         Judge2 = RS232_Get_TTLMode();
+                         if (CT1.IsCancellationRequested)
+                         {
+                             return;
+                         }
+                     }
+                    else
+                     {
+                         if (CT1.IsCancellationRequested)
+                         {
+                             return;
+                         }
+                         RS232_DeviceClose();
+                         RS232_Open = false;
+                         RS232_GetALLInfo();
+                         RS232_Mode.Active = false;
+                         Invoke(new Action(() => {
+                             RS232_Power_Read.Text = "";
+                             BT_Value.Text = "";
+                             SystemTemp_Value.Text = "";
+                             LD_Value.Text = "";
+                             RS232_SerialPort.Items.Clear();
+                             foreach(string port in portList)
+                             {
+                                 RS232_SerialPort.Items.Add(port);
+                             }
+                         }));
+                     }                 
                 }                
             }, CT1);
         }
@@ -1182,14 +1587,15 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private void RS232_Command_Button_Click_1(object sender, EventArgs e)
         {
             string Output_Result;
-            if((RS232_SerialPort.Text!="")&(Rest_DataTable.Rows.Count>=1))
+            if((RS232_Open==true)&(Rest_DataTable.Rows.Count>=1))
             {
                 CTS1.Cancel();
                 Delay(500);
                 Task.WaitAll(task);
+                //await Task.WhenAll(task);
                 RS232_Command.Text = Command_List.Text;
-                richTextBox3.AppendText(Command_List.Text+"\r\n");
-                Output_Result =RSCL.SerialPortWrite(COM, Command_List.Text+"\r\n");
+                richTextBox3.AppendText(RS232_Command.Text + "\r\n");
+                Output_Result =RSCL.SerialPortWrite(COM, RS232_Command.Text + "\r\n");
                 richTextBox3.AppendText(Output_Result+ "\r\n");
                 Task_LaserRead();
             }
@@ -1199,7 +1605,9 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         {
             richTextBox3.Clear();
         }
+
         #endregion
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -1247,7 +1655,8 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
                     报警信息.AppendText(Message);
                     报警信息.Select(报警信息.TextLength - Message.Length > 0 ? 报警信息.TextLength - Message.Length + 1 : 0, Message.Length + 1);
                     报警信息.SelectionColor = msColor;
-                    报警信息.SelectionFont = new Font("Times New Roman", FontSize);
+                    Font baseFont= new Font("Times New Roman", FontSize);
+                    报警信息.SelectionFont = new Font(baseFont,FontStyle.Bold);
                     报警信息.ScrollToCaret();
                     using (StreamWriter sw = new StreamWriter(Application.StartupPath + "\\log\\" + DateTime.Now.ToString("yyyy_MM_dd") + ".txt", true))
                     {
@@ -1263,12 +1672,12 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
 
         public void Log_日志(string Input)
         {
-            SetLog(Input, Color.Black, 8);
+            SetLog(Input, Color.Black, 10);
         }
 
         public void Log_报警(string Input)
         {
-            SetLog(Input, Color.Red, 10);
+            SetLog(Input, Color.Red, 12);
         }
 
         private void radMenuItem3_Click(object sender, EventArgs e)
@@ -1279,7 +1688,7 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
         private void radMenuItem1_Click(object sender, EventArgs e)
         {
             报警信息.Clear();
-            Log_日志("Successfully clear the Log context.");
+            //Log_日志("Successfully clear the Log context.");
         }
 
         private void 历史查询_Click(object sender, EventArgs e)
@@ -1292,12 +1701,182 @@ namespace PIC_Multi_Laser_High_Power_GUI_V1._0
             }
         }
 
+        private void USB控制界面_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void 勾选控件_Change(CheckBox checkBox1,CheckBox checkBox2)
+        {
+            if(checkBox1.Checked==true)
+            {
+                checkBox1.Checked = true;
+                checkBox2.Checked = false;
+            }
+            else
+            {
+                checkBox1.Checked = false;
+                checkBox2.Checked = true;
+            }     
+        }
+
+        private void 勾选_Change(object sender, EventArgs e)
+        {
+            勾选控件_Change(功率百分比_勾选,功率数值_勾选);
+            if (RCD.Allow_PowerIntensity_Set!= null)
+            {
+                if (功率百分比_勾选.Checked == true)
+                {
+                    RSCL.SerialPortWrite(COM, RCD.Allow_PowerIntensity_Set.Replace("*", Channel.ToString()));
+                }
+            }
+        }
+
+        private void 功率数值_勾选_Click(object sender, EventArgs e)
+        {
+            勾选控件_Change(功率数值_勾选, 功率百分比_勾选);
+            if (RCD.Allow_PowerValue_Set!= null)
+            {
+                if (功率数值_勾选.Checked == true)
+                {
+                    RSCL.SerialPortWrite(COM, RCD.Allow_PowerValue_Set.Replace("*", Channel.ToString()));
+                }
+            }
+        }
+
+
 
         #endregion
 
-        private void USB控制界面_Click(object sender, EventArgs e)
+        #region //其他
+
+        public bool Lanuage_Chinese;
+
+        private void 帮助_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("If you encounter any technical issues, you can contact John.Jiang from PIC at any time, or visit the PIC official website for assistance.");
         }
+
+        public void Language_Convert(bool Chinese)
+        {
+            if(Chinese==true)
+            {
+                this.Text = "基于C#配置式激光控制上位机 V1.0";
+                管理员登录.Text = "管理员";
+                管理员界面登录.Text = "管理员登录";
+                密码修改.Text = "密码修改";
+                管理员退出.Text = "管理员退出";
+                radMenuItem14.Text = "网络运行模式";
+                外部单机模式.Text = "外部单机模式";
+                内部联网模式.Text = "内部联网模式";
+                radMenuItem2.Text = "USB配置用例";
+                USB通讯新建用例.Text = "新建用例";
+                USB通讯编辑用例.Text = "编辑用例";
+                USB通讯载入用例.Text = "载入用例";
+                RS232配置用例.Text = "RS232配置用例";
+                RS232新建配置用例.Text = "新建用例";
+                RS232编辑配置用例.Text = "编辑用例";
+                RS232载入配置用例.Text = "载入用例";
+                radMenuItem3.Text = "错误日志";
+                日志列表清空.Text = "日志列表清空";
+                历史查询.Text = "历史查询";
+                软件语言.Text = "软件语言";
+                语言切换.Text = "语言切换";
+                radMenuItem5.Text = "运行帮助";
+                帮助.Text = "帮助";
+                主界面.Text = "              主  界面  ";
+                串口协议界面.Text = "                串口协议界面       ";
+                USB配置界面.Text = "                    USB配置界面          ";
+                USB控制界面.Text = "          USB控制界面";
+                退出界面.Text = "                        退   出              ";
+                if (External_Net_Mode == true)
+                {
+                    网络模式显示.Text = "                   ---外部单机模式---                 ";
+                }
+                else
+                {
+                    网络模式显示.Text = "                   ---内部联网模式---                 ";
+                }
+                if(Admin==true)
+                {
+                    管理员显示.Text = "                  管理员模式              ";
+                }
+                else
+                {
+                    管理员显示.Text = "                  操作员模式              ";
+                }
+            }
+            else
+            {
+                this.Text = "C# Configuration-Based Laser Control Upper Computer System V1.0";
+                管理员登录.Text = "Admin Login";
+                管理员界面登录.Text = "Admin Interface Login";
+                密码修改.Text = "Password Change";
+                管理员退出.Text = "Admin Logout";
+                radMenuItem14.Text = "Network Operation Mode";
+                外部单机模式.Text = "External Standalone Mode";
+                内部联网模式.Text = "Internal Networked Mode";
+                radMenuItem2.Text = "USB Configuration";
+                USB通讯新建用例.Text = "New USB Communication Case";
+                USB通讯编辑用例.Text = "Edit USB Communication Case";
+                USB通讯载入用例.Text = "Load USB Communication Case";
+                RS232配置用例.Text = "RS232 Configuration";
+                RS232新建配置用例.Text = "New RS232 Configuration Case";
+                RS232编辑配置用例.Text = "Edit RS232 Configuration Case";
+                RS232载入配置用例.Text = "Load RS232 Configuration Case";
+                radMenuItem3.Text = "Error Logs";
+                日志列表清空.Text = "Clear Log List";
+                历史查询.Text = "History Query";
+                软件语言.Text = "Software Language";
+                语言切换.Text = "Language Switch";
+                radMenuItem5.Text = "Operational Help";
+                帮助.Text = "Help";
+                主界面.Text = "              Main Interface       ";
+                串口协议界面.Text = "                Serial Protocol        ";
+                USB配置界面.Text = "                  USB Configuration   ";
+                USB控制界面.Text = "          USB Control ";
+                退出界面.Text = "                        Exit              ";
+                if (External_Net_Mode == true)
+                {
+                    网络模式显示.Text = "           ---External Standalone Mode---            ";
+                }
+                else
+                {
+                    网络模式显示.Text = "           ---Internal Networked Mode---             ";
+                }
+                if (Admin == true)
+                {
+                    管理员显示.Text = "      Administrator Mode       ";
+                }
+                else
+                {
+                    管理员显示.Text = "      Operator Mode            ";
+                }
+            }
+
+        }
+
+        private void 语言切换_Click(object sender, EventArgs e)
+        {
+            Lanuage_Chinese = !Lanuage_Chinese;
+            Language_Convert(Lanuage_Chinese);
+        }
+
+        public void 系统语言检测()
+        {
+            CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+            if (cultureInfo.TwoLetterISOLanguageName.Contains("zh"))
+            {
+                Lanuage_Chinese = true;
+            }
+            else
+            {
+                Lanuage_Chinese = false;
+            }
+        }
+
+        #endregion
+
+
     }
 }
